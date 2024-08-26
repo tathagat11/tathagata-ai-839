@@ -89,11 +89,13 @@ kedro-telemetry==0.6.0
 kedro-viz==9.2.0
 kiwisolver==1.4.5
 lazy_loader==0.4
+liac-arff==2.5.0
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 matplotlib==3.9.2
 matplotlib-inline==0.1.7
 mdurl==0.1.2
+minio==7.2.8
 mistune==3.0.2
 more-itertools==10.4.0
 multidict==6.0.5
@@ -104,8 +106,9 @@ nest-asyncio==1.6.0
 networkx==3.3
 notebook==7.2.1
 notebook_shim==0.2.4
-numpy==2.1.0
+numpy==1.23.5
 omegaconf==2.3.0
+openml==0.14.2
 openpyxl==3.1.5
 orjson==3.10.7
 overrides==7.7.0
@@ -131,6 +134,7 @@ pure_eval==0.2.3
 py4j==0.10.9.7
 pyarrow==17.0.0
 pycparser==2.22
+pycryptodome==3.20.0
 pydantic==2.8.2
 pydantic_core==2.20.1
 Pygments==2.18.0
@@ -200,6 +204,7 @@ webencodings==0.5.1
 websocket-client==1.8.0
 websockets==13.0
 wrapt==1.16.0
+xmltodict==0.13.0
 yarg==0.1.9
 yarl==1.9.4
 zipp==3.20.0
