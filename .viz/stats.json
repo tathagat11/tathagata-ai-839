@@ -1,0 +1,1 @@
+{"dataset_id_96": {"rows": 100, "columns": 32, "file_size": 33718}, "loaded_data": {"rows": 100, "columns": 32, "file_size": 32501}, "preprocessed_data": {"rows": 100, "columns": 73, "file_size": 67899}, "features": {"rows": 100, "columns": 72, "file_size": 67433}, "target": {"rows": 100, "columns": 1, "file_size": 1500}}
