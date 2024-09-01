@@ -1,8 +1,8 @@
-from kedro.pipeline import Pipeline, node
+from kedro.pipeline import Pipeline, pipeline, node
 from .nodes import load_data, preprocess_data, split_data
 
-def create_pipeline(**kwargs):
-    return Pipeline(
+def create_pipeline(**kwargs) -> Pipeline:
+    return pipeline(
         [
             node(
                 func=load_data,
