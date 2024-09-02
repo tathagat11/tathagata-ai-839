@@ -1,13 +1,19 @@
 from kedro.pipeline import Pipeline, node
 from .nodes import split_data, train_model, evaluate_model
 
+
 def create_pipeline(**kwargs) -> Pipeline:
     return Pipeline(
         [
             node(
                 func=split_data,
                 inputs=["features", "target", "params:model_options"],
-                outputs={"X_train": "X_train", "X_test": "X_test", "y_train": "y_train", "y_test": "y_test"},
+                outputs={
+                    "X_train": "X_train",
+                    "X_test": "X_test",
+                    "y_train": "y_train",
+                    "y_test": "y_test",
+                },
                 name="split_data_node",
             ),
             node(
