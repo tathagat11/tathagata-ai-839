@@ -8,12 +8,12 @@ Welcome to project tathagata_ai_839's API docs!
 .. toctree::
    :maxdepth: 4
 
-   modules
+   api
 
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`

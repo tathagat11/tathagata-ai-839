@@ -1,6 +1,6 @@
 """
-This is a boilerplate pipeline 'data_science'
-generated using Kedro 0.19.7
+This is the "data science" phase of the pipeline.
+All functions that form the nodes are can be found below under "nodes"
 """
 
 from .pipeline import create_pipeline

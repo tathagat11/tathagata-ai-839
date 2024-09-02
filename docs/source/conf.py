@@ -40,6 +40,17 @@ version = re.match(r"^([0-9]+\.[0-9]+).*", release).group(1)
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
+
+# quartodoc_config = {
+#     "package": "tathagata_ai_839",
+#     "api": {
+#         "source_path": "../src",
+#         "output_dir": "api",
+#         "exclude": ["tests"],
+#     },
+# }
+
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
@@ -53,6 +64,8 @@ extensions = [
     "nbsphinx",
     "sphinx_copybutton",
     "myst_parser",
+    "sphinx.ext.autosummary",
+    # "quartodoc",
 ]
 
 # enable autosummary plugin (table of contents for modules/classes/class
