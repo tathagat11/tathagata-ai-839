@@ -8,6 +8,10 @@ loaded_data:
   save_args:
     engine: pyarrow
 
+data_quality_report_html:
+  type: text.TextDataset
+  filepath: data/08_reporting/data_quality_report_path.txt
+
 preprocessed_data:
   type: pandas.ParquetDataset
   filepath: data/03_primary/preprocessed_data.parquet
@@ -26,7 +30,7 @@ target:
   save_args:
     engine: pyarrow
 
-# New entries for data science pipeline
+# data science pipeline
 
 X_train:
   type: pandas.ParquetDataset
@@ -60,3 +64,4 @@ model:
 metrics:
   type: json.JSONDataset
   filepath: data/08_reporting/metrics.json
+

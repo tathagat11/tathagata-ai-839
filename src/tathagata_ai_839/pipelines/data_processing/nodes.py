@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
+from .data_quality import generate_data_quality_report, get_data_quality_metrics
+import logging
 
+logger = logging.getLogger(__name__)
 
 def load_data(data: pd.DataFrame) -> pd.DataFrame:
     """
@@ -16,6 +19,26 @@ def load_data(data: pd.DataFrame) -> pd.DataFrame:
         Loaded DataFrame
     """
     return data
+
+
+def run_data_quality_checks(df: pd.DataFrame) -> Dict[str, dict]:
+    """
+    Run data quality checks on the input data.
+
+    Args:
+        df: Input DataFrame
+
+    Returns:
+        Dictionary containing key metrics
+    """
+    try:
+        generate_data_quality_report(df)
+        metrics = get_data_quality_metrics(df)
+    except Exception as e:
+        logger.error(f"Error in generating data quality report: {str(e)}")
+        metrics = {"error": str(e)}
+    
+    return {"data_quality_metrics": metrics}
 
 
 def identify_categorical_columns(df: pd.DataFrame) -> List[str]:
