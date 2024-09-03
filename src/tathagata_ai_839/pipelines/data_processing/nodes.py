@@ -21,7 +21,7 @@ def load_data(data: pd.DataFrame) -> pd.DataFrame:
     return data
 
 
-def run_data_quality_checks(df: pd.DataFrame) -> Dict[str, dict]:
+def run_data_quality_checks(df: pd.DataFrame) -> Dict:
     """
     Run data quality checks on the input data.
 
@@ -38,7 +38,7 @@ def run_data_quality_checks(df: pd.DataFrame) -> Dict[str, dict]:
         logger.error(f"Error in generating data quality report: {str(e)}")
         metrics = {"error": str(e)}
     
-    return {"data_quality_metrics": metrics}
+    return metrics
 
 
 def identify_categorical_columns(df: pd.DataFrame) -> List[str]:

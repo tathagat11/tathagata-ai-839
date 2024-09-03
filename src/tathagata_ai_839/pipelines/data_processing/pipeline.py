@@ -13,7 +13,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(
                 func=run_data_quality_checks,
                 inputs="loaded_data",
-                outputs={"data_quality_metrics": "data_quality_metrics"},
+                outputs="data_quality_metrics",
                 name="run_data_quality_checks",
             ),
             node(

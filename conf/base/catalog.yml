@@ -8,9 +8,9 @@ loaded_data:
   save_args:
     engine: pyarrow
 
-data_quality_report_html:
-  type: text.TextDataset
-  filepath: data/08_reporting/data_quality_report_path.txt
+data_quality_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/data_quality_metrics.json
 
 preprocessed_data:
   type: pandas.ParquetDataset
