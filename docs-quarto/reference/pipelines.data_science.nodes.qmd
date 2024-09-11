@@ -1,0 +1,45 @@
+# pipelines.data_science.nodes { #tathagata_ai_839.pipelines.data_science.nodes }
+
+`pipelines.data_science.nodes`
+
+
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [detect_target_drift](#tathagata_ai_839.pipelines.data_science.nodes.detect_target_drift) | Detects target drift between training and test sets. |
+| [evaluate_model](#tathagata_ai_839.pipelines.data_science.nodes.evaluate_model) | Calculates and logs the accuracy of the model. |
+| [split_data](#tathagata_ai_839.pipelines.data_science.nodes.split_data) | Splits data into training and test sets. |
+| [train_model](#tathagata_ai_839.pipelines.data_science.nodes.train_model) | Trains the random forest model. |
+
+### detect_target_drift { #tathagata_ai_839.pipelines.data_science.nodes.detect_target_drift }
+
+`pipelines.data_science.nodes.detect_target_drift(y_train, y_test)`
+
+Detects target drift between training and test sets.
+
+Args:
+    y_train: Target variable from the training set (DataFrame)
+    y_test: Target variable from the test set (DataFrame)
+
+Raises:
+    ValueError: If significant target drift is detected
+
+### evaluate_model { #tathagata_ai_839.pipelines.data_science.nodes.evaluate_model }
+
+`pipelines.data_science.nodes.evaluate_model(model, X_test, y_test)`
+
+Calculates and logs the accuracy of the model.
+
+### split_data { #tathagata_ai_839.pipelines.data_science.nodes.split_data }
+
+`pipelines.data_science.nodes.split_data(features, target, parameters)`
+
+Splits data into training and test sets.
+
+### train_model { #tathagata_ai_839.pipelines.data_science.nodes.train_model }
+
+`pipelines.data_science.nodes.train_model(X_train, y_train, parameters)`
+
+Trains the random forest model.

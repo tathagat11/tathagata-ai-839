@@ -12,5 +12,6 @@ tathagata\_ai\_839.pipelines.data\_processing.nodes
       identify_numerical_columns
       load_data
       preprocess_data
+      run_data_quality_checks
       split_data
    

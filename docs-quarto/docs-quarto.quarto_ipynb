@@ -1,0 +1,48 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"tathagata_ai_839 Documentation\"\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "Welcome to the documentation for tathagata_ai_839.\n",
+        "\n",
+        "## API Reference\n"
+      ],
+      "id": "216e049a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "from quartodoc import collect, render\n",
+        "\n",
+        "# Collect the objects to document\n",
+        "inventory = collect(\"tathagata_ai_839\")\n",
+        "\n",
+        "# Render the documentation\n",
+        "render(inventory)"
+      ],
+      "id": "7d96c63d",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/home/tathagat/workspace/projects/MLPE/tathagata-ai-839/.venv/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

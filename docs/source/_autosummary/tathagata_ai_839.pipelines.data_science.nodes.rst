@@ -1,4 +1,4 @@
-tathagata\_ai\_839.pipelines.data\_science.nodes
+﻿tathagata\_ai\_839.pipelines.data\_science.nodes
 ================================================
 
 .. automodule:: tathagata_ai_839.pipelines.data_science.nodes
@@ -8,6 +8,7 @@ tathagata\_ai\_839.pipelines.data\_science.nodes
 
    .. autosummary::
    
+      detect_target_drift
       evaluate_model
       split_data
       train_model

@@ -1,4 +1,4 @@
-tathagata\_ai\_839.pipelines.data\_processing
+﻿tathagata\_ai\_839.pipelines.data\_processing
 =============================================
 
 .. automodule:: tathagata_ai_839.pipelines.data_processing
@@ -10,5 +10,6 @@ tathagata\_ai\_839.pipelines.data\_processing
    :toctree:
    :recursive:
 
+   data_quality
    nodes
    pipeline

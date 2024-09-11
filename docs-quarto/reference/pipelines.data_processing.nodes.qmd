@@ -1,0 +1,90 @@
+# pipelines.data_processing.nodes { #tathagata_ai_839.pipelines.data_processing.nodes }
+
+`pipelines.data_processing.nodes`
+
+
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [identify_categorical_columns](#tathagata_ai_839.pipelines.data_processing.nodes.identify_categorical_columns) | Identify categorical columns in the DataFrame. |
+| [identify_numerical_columns](#tathagata_ai_839.pipelines.data_processing.nodes.identify_numerical_columns) | Identify numerical columns in the DataFrame. |
+| [load_data](#tathagata_ai_839.pipelines.data_processing.nodes.load_data) | Load the data from the CSV file. |
+| [preprocess_data](#tathagata_ai_839.pipelines.data_processing.nodes.preprocess_data) | Preprocess the data by handling categorical variables, scaling numerical variables, |
+| [run_data_quality_checks](#tathagata_ai_839.pipelines.data_processing.nodes.run_data_quality_checks) | Run data quality checks on the input data. |
+| [split_data](#tathagata_ai_839.pipelines.data_processing.nodes.split_data) | Split the data into features and target. |
+
+### identify_categorical_columns { #tathagata_ai_839.pipelines.data_processing.nodes.identify_categorical_columns }
+
+`pipelines.data_processing.nodes.identify_categorical_columns(df)`
+
+Identify categorical columns in the DataFrame.
+
+Args:
+    df: Input DataFrame
+
+Returns:
+    List of categorical column names
+
+### identify_numerical_columns { #tathagata_ai_839.pipelines.data_processing.nodes.identify_numerical_columns }
+
+`pipelines.data_processing.nodes.identify_numerical_columns(df)`
+
+Identify numerical columns in the DataFrame.
+
+Args:
+    df: Input DataFrame
+
+Returns:
+    List of numerical column names
+
+### load_data { #tathagata_ai_839.pipelines.data_processing.nodes.load_data }
+
+`pipelines.data_processing.nodes.load_data(data)`
+
+Load the data from the CSV file.
+
+Args:
+    data: Raw DataFrame loaded by Kedro
+
+Returns:
+    Loaded DataFrame
+
+### preprocess_data { #tathagata_ai_839.pipelines.data_processing.nodes.preprocess_data }
+
+`pipelines.data_processing.nodes.preprocess_data(df)`
+
+Preprocess the data by handling categorical variables, scaling numerical variables,
+and separating the target variable.
+
+Args:
+    df: Raw DataFrame
+
+Returns:
+    Preprocessed DataFrame
+
+### run_data_quality_checks { #tathagata_ai_839.pipelines.data_processing.nodes.run_data_quality_checks }
+
+`pipelines.data_processing.nodes.run_data_quality_checks(df)`
+
+Run data quality checks on the input data.
+
+Args:
+    df: Input DataFrame
+
+Returns:
+    Dictionary containing key metrics
+
+### split_data { #tathagata_ai_839.pipelines.data_processing.nodes.split_data }
+
+`pipelines.data_processing.nodes.split_data(df, target_column='y')`
+
+Split the data into features and target.
+
+Args:
+    df: Preprocessed DataFrame
+    target_column: Name of the target column
+
+Returns:
+    Dictionary containing 'features' and 'target' as DataFrames
