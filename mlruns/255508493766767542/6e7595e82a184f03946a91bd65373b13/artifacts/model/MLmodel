@@ -1,0 +1,88 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.12
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.1
+mlflow_version: 2.16.0
+model_size_bytes: 253106
+model_uuid: 081f107c4b3d453ca4983065e88f810a
+run_id: 6e7595e82a184f03946a91bd65373b13
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "duration", "required": true}, {"type": "double",
+    "name": "credit_amount", "required": true}, {"type": "double", "name": "installment_commitment",
+    "required": true}, {"type": "double", "name": "residence_since", "required": true},
+    {"type": "double", "name": "age", "required": true}, {"type": "double", "name":
+    "existing_credits", "required": true}, {"type": "double", "name": "num_dependents",
+    "required": true}, {"type": "double", "name": "X_1", "required": true}, {"type":
+    "double", "name": "X_2", "required": true}, {"type": "double", "name": "X_3",
+    "required": true}, {"type": "double", "name": "X_4", "required": true}, {"type":
+    "double", "name": "X_5", "required": true}, {"type": "double", "name": "X_6",
+    "required": true}, {"type": "double", "name": "X_7", "required": true}, {"type":
+    "double", "name": "X_8", "required": true}, {"type": "double", "name": "X_9",
+    "required": true}, {"type": "double", "name": "X_10", "required": true}, {"type":
+    "double", "name": "checking_status_0<=X<200", "required": true}, {"type": "double",
+    "name": "checking_status_<0", "required": true}, {"type": "double", "name": "checking_status_>=200",
+    "required": true}, {"type": "double", "name": "checking_status_no checking", "required":
+    true}, {"type": "double", "name": "credit_history_all paid", "required": true},
+    {"type": "double", "name": "credit_history_critical/other existing credit", "required":
+    true}, {"type": "double", "name": "credit_history_delayed previously", "required":
+    true}, {"type": "double", "name": "credit_history_existing paid", "required":
+    true}, {"type": "double", "name": "credit_history_no credits/all paid", "required":
+    true}, {"type": "double", "name": "purpose_business", "required": true}, {"type":
+    "double", "name": "purpose_domestic appliance", "required": true}, {"type": "double",
+    "name": "purpose_education", "required": true}, {"type": "double", "name": "purpose_furniture/equipment",
+    "required": true}, {"type": "double", "name": "purpose_new car", "required": true},
+    {"type": "double", "name": "purpose_radio/tv", "required": true}, {"type": "double",
+    "name": "purpose_repairs", "required": true}, {"type": "double", "name": "purpose_retraining",
+    "required": true}, {"type": "double", "name": "purpose_used car", "required":
+    true}, {"type": "double", "name": "savings_status_100<=X<500", "required": true},
+    {"type": "double", "name": "savings_status_500<=X<1000", "required": true}, {"type":
+    "double", "name": "savings_status_<100", "required": true}, {"type": "double",
+    "name": "savings_status_>=1000", "required": true}, {"type": "double", "name":
+    "savings_status_no known savings", "required": true}, {"type": "double", "name":
+    "employment_1<=X<4", "required": true}, {"type": "double", "name": "employment_4<=X<7",
+    "required": true}, {"type": "double", "name": "employment_<1", "required": true},
+    {"type": "double", "name": "employment_>=7", "required": true}, {"type": "double",
+    "name": "employment_unemployed", "required": true}, {"type": "double", "name":
+    "personal_status_female div/dep/mar", "required": true}, {"type": "double", "name":
+    "personal_status_male div/sep", "required": true}, {"type": "double", "name":
+    "personal_status_male mar/wid", "required": true}, {"type": "double", "name":
+    "personal_status_male single", "required": true}, {"type": "double", "name": "other_parties_co
+    applicant", "required": true}, {"type": "double", "name": "other_parties_guarantor",
+    "required": true}, {"type": "double", "name": "other_parties_none", "required":
+    true}, {"type": "double", "name": "property_magnitude_car", "required": true},
+    {"type": "double", "name": "property_magnitude_life insurance", "required": true},
+    {"type": "double", "name": "property_magnitude_no known property", "required":
+    true}, {"type": "double", "name": "property_magnitude_real estate", "required":
+    true}, {"type": "double", "name": "other_payment_plans_bank", "required": true},
+    {"type": "double", "name": "other_payment_plans_none", "required": true}, {"type":
+    "double", "name": "other_payment_plans_stores", "required": true}, {"type": "double",
+    "name": "housing_for free", "required": true}, {"type": "double", "name": "housing_own",
+    "required": true}, {"type": "double", "name": "housing_rent", "required": true},
+    {"type": "double", "name": "job_high qualif/self emp/mgmt", "required": true},
+    {"type": "double", "name": "job_skilled", "required": true}, {"type": "double",
+    "name": "job_unemp/unskilled non res", "required": true}, {"type": "double", "name":
+    "job_unskilled resident", "required": true}, {"type": "double", "name": "own_telephone_none",
+    "required": true}, {"type": "double", "name": "own_telephone_yes", "required":
+    true}, {"type": "double", "name": "foreign_worker_no", "required": true}, {"type":
+    "double", "name": "foreign_worker_yes", "required": true}, {"type": "double",
+    "name": "health_status_bad", "required": true}, {"type": "double", "name": "health_status_good",
+    "required": true}]'
+  outputs: '[{"type": "boolean", "name": "y", "required": true}]'
+  params: null
+utc_time_created: '2024-09-12 22:39:50.495186'

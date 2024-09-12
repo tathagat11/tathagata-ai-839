@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1726178231495
+current_stage: None
+description: null
+last_updated_timestamp: 1726178231495
+name: Model
+run_id: 1a62eb39e3bc49219dc468ea8d2733c6
+run_link: null
+source: file:///home/tathagat/workspace/projects/MLPE/tathagata-ai-839/tathagata-ai-839/mlruns/255508493766767542/1a62eb39e3bc49219dc468ea8d2733c6/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///home/tathagat/workspace/projects/MLPE/tathagata-ai-839/tathagata-ai-839/mlruns/255508493766767542/1a62eb39e3bc49219dc468ea8d2733c6/artifacts/model
+user_id: null
+version: 2

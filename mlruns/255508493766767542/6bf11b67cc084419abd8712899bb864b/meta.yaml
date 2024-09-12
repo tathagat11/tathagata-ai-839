@@ -1,0 +1,15 @@
+artifact_uri: file:///home/tathagat/workspace/projects/MLPE/tathagata-ai-839/tathagata-ai-839/mlruns/255508493766767542/6bf11b67cc084419abd8712899bb864b/artifacts
+end_time: 1726176699482
+entry_point_name: ''
+experiment_id: '255508493766767542'
+lifecycle_stage: active
+run_id: 6bf11b67cc084419abd8712899bb864b
+run_name: __default__
+run_uuid: 6bf11b67cc084419abd8712899bb864b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1726176696167
+status: 3
+tags: []
+user_id: tathagat

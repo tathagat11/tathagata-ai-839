@@ -12,6 +12,9 @@ from evidently.metric_preset import TargetDriftPreset
 from evidently.metrics import DataDriftTable
 import json
 
+import mlflow
+import mlflow.sklearn
+from mlflow.models import infer_signature
 
 logger = logging.getLogger(__name__)
 
@@ -86,6 +89,19 @@ def train_model(
     """Trains the random forest model."""
     model = RandomForestClassifier(**parameters["model_params"])
     model.fit(X_train, y_train.values.ravel())
+
+    mlflow.log_params(parameters["model_params"])
+    
+    signature = infer_signature(X_train, y_train)
+
+    # Model logging
+    mlflow.sklearn.log_model(
+        sk_model=model,
+        artifact_path="model",
+        signature=signature,
+        input_example=X_train.iloc[:5],
+        registered_model_name="Model"
+        )
     return model
 
 
@@ -102,4 +118,10 @@ def evaluate_model(
     f1 = f1_score(y_true, y_pred, average="binary")
 
     logger.info("Model has accuracy of %.3f on test data.", accuracy)
+    
+    mlflow.log_metric("test_accuracy", accuracy)
+    mlflow.log_metric("test_precision", precision)
+    mlflow.log_metric("test_recall", recall)
+    mlflow.log_metric("test_f1", f1)
+    
     return {"accuracy": accuracy, "precision": precision, "recall": recall, "f1": f1}
