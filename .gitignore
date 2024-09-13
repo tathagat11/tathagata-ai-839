@@ -1,5 +1,7 @@
 ##########################
 # KEDRO PROJECT
+# mlflow files
+mlruns/
 
 # ignore all local configuration
 conf/local/**
