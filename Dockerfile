@@ -1,10 +1,10 @@
-FROM python:3.9-slim
-
-# Install required packages
-RUN pip install fastapi uvicorn mlflow pandas scikit-learn
+FROM python:3.10
 
 # Set working directory
 WORKDIR /app
+
+# Install required packages
+RUN pip install fastapi uvicorn mlflow pandas scikit-learn numpy
 
 # Copy the custom server script
 COPY model_server.py /app/

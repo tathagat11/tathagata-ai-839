@@ -44,7 +44,7 @@ class MLflowModelDeploymentHook:
             "--name", "mlflow-model-server",
             "-p", "5002:5002", 
             "-v", f"{absolute_model_path}:/models",
-            "mlflow-serve-env"
+            "mlflow-server"
         ], check=True)
         
         print(f"Deployed latest model version: {latest_version.version}")

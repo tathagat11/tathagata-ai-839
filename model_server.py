@@ -11,6 +11,8 @@ import logging
 from datetime import datetime
 import json
 
+from fastapi.openapi.utils import get_openapi
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -209,6 +211,25 @@ async def get_logs(
         return log_entries
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error retrieving logs: {str(e)}")
+
+
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title="API Documentation",
+        version="1.0.0",
+        description="Description of API available to access the latest version of the model.",
+        routes=app.routes,
+    )
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+
+app.openapi = custom_openapi
+
+with open("/app/openapi.json", "w") as f:
+    json.dump(app.openapi(), f)
 
 
 if __name__ == "__main__":
