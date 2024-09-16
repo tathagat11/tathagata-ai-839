@@ -1,26 +1,5 @@
 # Function reference {.doc .doc-index}
 
-## Data Processing
+## tathagata_ai_839
 
-Data processing nodes
-
-| | |
-| --- | --- |
-| [pipelines.data_processing.nodes](pipelines.data_processing.nodes.qmd#tathagata_ai_839.pipelines.data_processing.nodes) |  |
-
-## Data Science
-
-Data science nodes
-
-| | |
-| --- | --- |
-| [pipelines.data_science.nodes](pipelines.data_science.nodes.qmd#tathagata_ai_839.pipelines.data_science.nodes) |  |
-
-## Pipelines
-
-Pipeline definitions
-
-| | |
-| --- | --- |
-| [pipelines.data_processing.pipeline](pipelines.data_processing.pipeline.qmd#tathagata_ai_839.pipelines.data_processing.pipeline) |  |
-| [pipelines.data_science.pipeline](pipelines.data_science.pipeline.qmd#tathagata_ai_839.pipelines.data_science.pipeline) |  |
+tathagata-ai-839

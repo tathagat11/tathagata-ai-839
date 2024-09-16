@@ -12,5 +12,8 @@ website:
       - reference/pipelines.data_processing.pipeline.qmd
       - reference/pipelines.data_science.pipeline.qmd
       section: Pipelines
+    - contents:
+      - api-docs.qmd
+      section: API Documentation
     id: reference
   - id: dummy-sidebar

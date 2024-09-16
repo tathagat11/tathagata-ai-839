@@ -7,17 +7,24 @@ metadata-files:
 quartodoc:
   package: tathagata_ai_839
   sidebar: _sidebar.yml
-  sections:
-    - title: Data Processing
-      desc: Data processing nodes
-      contents:
-        - pipelines.data_processing.nodes
-    - title: Data Science
-      desc: Data science nodes
-      contents:
-        - pipelines.data_science.nodes
-    - title: Pipelines
-      desc: Pipeline definitions
-      contents:
-        - pipelines.data_processing.pipeline
-        - pipelines.data_science.pipeline
+
+website:
+  navbar:
+    left:
+      - text: "Read The Docs"
+        href: api-docs.html
+
+sections:
+  - title: Data Processing
+    desc: Data processing nodes
+    contents:
+      - pipelines.data_processing.nodes
+  - title: Data Science
+    desc: Data science nodes
+    contents:
+      - pipelines.data_science.nodes
+  - title: Pipelines
+    desc: Pipeline definitions
+    contents:
+      - pipelines.data_processing.pipeline
+      - pipelines.data_science.pipeline

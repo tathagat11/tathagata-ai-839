@@ -11,10 +11,399 @@ format:
 <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui.css"/>
 
 <script>
-  window.onload = () => {
-    window.ui = SwaggerUIBundle({
-      url: "openapi.json",
-      dom_id: "#swagger-ui",
-    });
-  };
+const spec = {
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Documentation",
+    "description": "Description of API available to access the latest version of the model.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/predict": {
+      "post": {
+        "summary": "Predict",
+        "operationId": "predict_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/InputData"
+                  },
+                  {
+                    "$ref": "#/components/schemas/BatchInputData"
+                  }
+                ],
+                "title": "Input Data"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/logs": {
+      "get": {
+        "summary": "Get Logs",
+        "operationId": "get_logs_logs_get",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Number of log entries to return",
+              "default": 100,
+              "title": "Limit"
+            },
+            "description": "Number of log entries to return"
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Log level filter (INFO, ERROR, etc.)",
+              "title": "Level"
+            },
+            "description": "Log level filter (INFO, ERROR, etc.)"
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Start date for log filtering (YYYY-MM-DD)",
+              "title": "Start Date"
+            },
+            "description": "Start date for log filtering (YYYY-MM-DD)"
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "End date for log filtering (YYYY-MM-DD)",
+              "title": "End Date"
+            },
+            "description": "End date for log filtering (YYYY-MM-DD)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  },
+                  "title": "Response Get Logs Logs Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BatchInputData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/InputData"
+            },
+            "type": "array",
+            "title": "Data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "title": "BatchInputData"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InputData": {
+        "properties": {
+          "checking_status": {
+            "type": "string",
+            "title": "Checking Status"
+          },
+          "duration": {
+            "type": "integer",
+            "title": "Duration"
+          },
+          "credit_history": {
+            "type": "string",
+            "title": "Credit History"
+          },
+          "purpose": {
+            "type": "string",
+            "title": "Purpose"
+          },
+          "credit_amount": {
+            "type": "number",
+            "title": "Credit Amount"
+          },
+          "savings_status": {
+            "type": "string",
+            "title": "Savings Status"
+          },
+          "employment": {
+            "type": "string",
+            "title": "Employment"
+          },
+          "installment_commitment": {
+            "type": "integer",
+            "title": "Installment Commitment"
+          },
+          "personal_status": {
+            "type": "string",
+            "title": "Personal Status"
+          },
+          "other_parties": {
+            "type": "string",
+            "title": "Other Parties"
+          },
+          "residence_since": {
+            "type": "integer",
+            "title": "Residence Since"
+          },
+          "property_magnitude": {
+            "type": "string",
+            "title": "Property Magnitude"
+          },
+          "age": {
+            "type": "integer",
+            "title": "Age"
+          },
+          "other_payment_plans": {
+            "type": "string",
+            "title": "Other Payment Plans"
+          },
+          "housing": {
+            "type": "string",
+            "title": "Housing"
+          },
+          "existing_credits": {
+            "type": "integer",
+            "title": "Existing Credits"
+          },
+          "job": {
+            "type": "string",
+            "title": "Job"
+          },
+          "num_dependents": {
+            "type": "integer",
+            "title": "Num Dependents"
+          },
+          "own_telephone": {
+            "type": "string",
+            "title": "Own Telephone"
+          },
+          "foreign_worker": {
+            "type": "string",
+            "title": "Foreign Worker"
+          },
+          "health_status": {
+            "type": "string",
+            "title": "Health Status"
+          },
+          "X_1": {
+            "type": "number",
+            "title": "X 1"
+          },
+          "X_2": {
+            "type": "number",
+            "title": "X 2"
+          },
+          "X_3": {
+            "type": "number",
+            "title": "X 3"
+          },
+          "X_4": {
+            "type": "number",
+            "title": "X 4"
+          },
+          "X_5": {
+            "type": "number",
+            "title": "X 5"
+          },
+          "X_6": {
+            "type": "number",
+            "title": "X 6"
+          },
+          "X_7": {
+            "type": "number",
+            "title": "X 7"
+          },
+          "X_8": {
+            "type": "number",
+            "title": "X 8"
+          },
+          "X_9": {
+            "type": "number",
+            "title": "X 9"
+          },
+          "X_10": {
+            "type": "number",
+            "title": "X 10"
+          }
+        },
+        "type": "object",
+        "required": [
+          "checking_status",
+          "duration",
+          "credit_history",
+          "purpose",
+          "credit_amount",
+          "savings_status",
+          "employment",
+          "installment_commitment",
+          "personal_status",
+          "other_parties",
+          "residence_since",
+          "property_magnitude",
+          "age",
+          "other_payment_plans",
+          "housing",
+          "existing_credits",
+          "job",
+          "num_dependents",
+          "own_telephone",
+          "foreign_worker",
+          "health_status",
+          "X_1",
+          "X_2",
+          "X_3",
+          "X_4",
+          "X_5",
+          "X_6",
+          "X_7",
+          "X_8",
+          "X_9",
+          "X_10"
+        ],
+        "title": "InputData"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
+
+window.onload = () => {
+  window.ui = SwaggerUIBundle({
+    spec: spec,
+    dom_id: "#swagger-ui",
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIBundle.SwaggerUIStandalonePreset
+    ],
+    layout: "BaseLayout"
+  });
+};
 </script>
