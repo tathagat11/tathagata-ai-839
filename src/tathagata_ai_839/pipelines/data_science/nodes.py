@@ -1,10 +1,12 @@
 import logging
-from typing import Dict
+from typing import Dict, Tuple
 import os
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from statsmodels.stats.contingency_tables import mcnemar
 
 from evidently import ColumnMapping
 from evidently.report import Report
@@ -84,29 +86,36 @@ def split_data(
 
 
 def train_model(
-    X_train: pd.DataFrame, y_train: pd.DataFrame, parameters: Dict
+    X_train: pd.DataFrame, 
+    y_train: pd.DataFrame, 
+    parameters: Dict,
+    model_name: str
 ) -> RandomForestClassifier:
     """Trains the random forest model."""
     model = RandomForestClassifier(**parameters["model_params"])
     model.fit(X_train, y_train.values.ravel())
 
-    mlflow.log_params(parameters["model_params"])
-    
-    signature = infer_signature(X_train, y_train)
+    with mlflow.start_run(run_name=f"Train_{model_name}", nested=True):
+        mlflow.log_params(parameters["model_params"])
+        
+        signature = infer_signature(X_train, y_train)
 
-    # Model logging
-    mlflow.sklearn.log_model(
-        sk_model=model,
-        artifact_path="model",
-        signature=signature,
-        input_example=X_train.iloc[:5],
-        registered_model_name="Model"
+        # Model logging
+        mlflow.sklearn.log_model(
+            sk_model=model,
+            artifact_path=f"model_{model_name.lower()}",
+            signature=signature,
+            input_example=X_train.iloc[:5],
+            registered_model_name=f"Model_{model_name}"
         )
+    
     return model
 
-
 def evaluate_model(
-    model: RandomForestClassifier, X_test: pd.DataFrame, y_test: pd.DataFrame
+    model: RandomForestClassifier, 
+    X_test: pd.DataFrame, 
+    y_test: pd.DataFrame,
+    model_name: str
 ) -> Dict[str, float]:
     """Calculates and logs the accuracy of the model."""
     y_pred = model.predict(X_test)
@@ -117,11 +126,69 @@ def evaluate_model(
     recall = recall_score(y_true, y_pred, average="binary")
     f1 = f1_score(y_true, y_pred, average="binary")
 
-    logger.info("Model has accuracy of %.3f on test data.", accuracy)
+    logger.info(f"{model_name} has accuracy of {accuracy:.3f} on test data.")
     
-    mlflow.log_metric("test_accuracy", accuracy)
-    mlflow.log_metric("test_precision", precision)
-    mlflow.log_metric("test_recall", recall)
-    mlflow.log_metric("test_f1", f1)
+    with mlflow.start_run(run_name=f"Evaluate_{model_name}", nested=True):
+        mlflow.log_metric(f"{model_name.lower()}_test_accuracy", accuracy)
+        mlflow.log_metric(f"{model_name.lower()}_test_precision", precision)
+        mlflow.log_metric(f"{model_name.lower()}_test_recall", recall)
+        mlflow.log_metric(f"{model_name.lower()}_test_f1", f1)
     
     return {"accuracy": accuracy, "precision": precision, "recall": recall, "f1": f1}
+
+
+def compare_models(
+    metrics_a: Dict[str, float],
+    metrics_b: Dict[str, float],
+    model_a: RandomForestClassifier,
+    model_b: RandomForestClassifier,
+    X_test_new: pd.DataFrame,
+    y_test_new: pd.DataFrame
+) -> Tuple[RandomForestClassifier, str]:
+    """
+    Compares two models based on their performance metrics and selects the better one.
+    
+    Args:
+        metrics_a: Performance metrics of Model A
+        metrics_b: Performance metrics of Model B
+        model_a: Model A (trained on original data)
+        model_b: Model B (trained on new data)
+        X_test_new: Features of the new test data
+        y_test_new: Target of the new test data
+    
+    Returns:
+        A tuple containing the better performing model and its name
+    """
+    y_pred_a = model_a.predict(X_test_new)
+    y_pred_b = model_b.predict(X_test_new)
+    y_true = y_test_new.values.ravel()
+
+    # Create contingency table
+    table = np.zeros((2, 2))
+    table[0, 0] = np.sum((y_pred_a == y_true) & (y_pred_b == y_true))
+    table[0, 1] = np.sum((y_pred_a == y_true) & (y_pred_b != y_true))
+    table[1, 0] = np.sum((y_pred_a != y_true) & (y_pred_b == y_true))
+    table[1, 1] = np.sum((y_pred_a != y_true) & (y_pred_b != y_true))
+
+    # Perform McNemar's test
+    result = mcnemar(table, exact=False, correction=True)
+
+    logger.info(f"McNemar's test statistic: {result.statistic:.4f}, p-value: {result.pvalue:.4f}")
+
+    with mlflow.start_run(run_name="Compare_Models", nested=True):
+        mlflow.log_metric("mcnemar_statistic", result.statistic)
+        mlflow.log_metric("mcnemar_pvalue", result.pvalue)
+
+        # Select the better model based on accuracy and statistical significance
+        if metrics_b['accuracy'] > metrics_a['accuracy'] and result.pvalue < 0.05:
+            logger.info("Model B performs significantly better. Selecting Model B.")
+            selected_model = model_b
+            selected_model_name = "Model_B"
+        else:
+            logger.info("Model A performs better or there's no significant difference. Selecting Model A.")
+            selected_model = model_a
+            selected_model_name = "Model_A"
+
+        mlflow.log_param("selected_model", selected_model_name)
+
+    return selected_model, selected_model_name

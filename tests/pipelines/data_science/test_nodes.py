@@ -39,7 +39,7 @@ def test_split_data(sample_data, model_parameters):
 def test_train_model(sample_data, model_parameters):
     features, target = sample_data
     split = split_data(features, target, model_parameters)
-    model = train_model(split["X_train"], split["y_train"], model_parameters)
+    model = train_model(split["X_train"], split["y_train"], model_parameters, model_name="model_A")
     
     assert isinstance(model, RandomForestClassifier)
     assert model.n_estimators == 100

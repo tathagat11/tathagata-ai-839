@@ -1,102 +1,162 @@
+# Data Processing
+# Original Data
+
 dataset_id_96:
   type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
   dataset:
     type: pandas.CSVDataset
     filepath: data/01_raw/dataset_id_96.csv
 
-loaded_data:
+loaded_data_original:
   type: pandas.ParquetDataset
-  filepath: data/02_intermediate/loaded_data.parquet
+  filepath: data/02_intermediate/loaded_data_original.parquet
   save_args:
     engine: pyarrow
 
-data_quality_metrics:
+data_quality_metrics_original:
   type: json.JSONDataset
-  filepath: data/08_reporting/data_quality_metrics.json
+  filepath: data/08_reporting/data_quality_metrics_original.json
 
-preprocessed_data:
+preprocessed_data_original:
   type: pandas.ParquetDataset
-  filepath: data/03_primary/preprocessed_data.parquet
+  filepath: data/03_primary/preprocessed_data_original.parquet
   save_args:
     engine: pyarrow
 
-features:
+features_original:
   type: pandas.ParquetDataset
-  filepath: data/04_feature/features.parquet
+  filepath: data/04_feature/features_original.parquet
   save_args:
     engine: pyarrow
 
-target:
+target_original:
   type: pandas.ParquetDataset
-  filepath: data/04_feature/target.parquet
+  filepath: data/04_feature/target_original.parquet
+  save_args:
+    engine: pyarrow
+
+#New Data
+
+dataset_id_T01_V3_96:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
+  dataset:
+    type: pandas.CSVDataset
+    filepath: data/01_raw/dataset_id_T01_V3_96.csv
+
+loaded_data_new:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/loaded_data_new.parquet
+  save_args:
+    engine: pyarrow
+
+data_quality_metrics_new:
+  type: json.JSONDataset
+  filepath: data/08_reporting/data_quality_metrics_new.json
+
+preprocessed_data_new:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/preprocessed_data_new.parquet
+  save_args:
+    engine: pyarrow
+
+features_new:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/features_new.parquet
+  save_args:
+    engine: pyarrow
+
+target_new:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/target_new.parquet
   save_args:
     engine: pyarrow
 
 # data science pipeline
-
-X_train:
+# Old data
+X_train_original:
   type: pandas.ParquetDataset
-  filepath: data/05_model_input/X_train.parquet
+  filepath: data/05_model_input/X_train_original.parquet
   save_args:
     engine: pyarrow
 
-X_test:
+X_test_original:
   type: pandas.ParquetDataset
-  filepath: data/05_model_input/X_test.parquet
+  filepath: data/05_model_input/X_test_original.parquet
   save_args:
     engine: pyarrow
 
-y_train:
+y_train_original:
   type: pandas.ParquetDataset
-  filepath: data/05_model_input/y_train.parquet
+  filepath: data/05_model_input/y_train_original.parquet
   save_args:
     engine: pyarrow
 
-y_test:
+y_test_original:
   type: pandas.ParquetDataset
-  filepath: data/05_model_input/y_test.parquet
+  filepath: data/05_model_input/y_test_original.parquet
   save_args:
     engine: pyarrow
 
-model:
+# New Data
+
+X_train_new:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_train_new.parquet
+  save_args:
+    engine: pyarrow
+
+X_test_new:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_test_new.parquet
+  save_args:
+    engine: pyarrow
+
+y_train_new:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_train_new.parquet
+  save_args:
+    engine: pyarrow
+
+y_test_new:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_test_new.parquet
+  save_args:
+    engine: pyarrow
+
+
+# Old model: model_a, New model: model_b
+model_a:
   type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
   dataset:
     type: kedro_mlflow.io.models.MlflowModelLocalFileSystemDataset
     flavor: mlflow.sklearn
-    filepath: data/06_models/model.pickle
+    filepath: data/06_models/model_a.pickle
 
-metrics:
+model_b:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
+  dataset:
+    type: kedro_mlflow.io.models.MlflowModelLocalFileSystemDataset
+    flavor: mlflow.sklearn
+    filepath: data/06_models/model_b.pickle
+
+metrics_a_original:
   type: json.JSONDataset
-  filepath: data/08_reporting/metrics.json
+  filepath: data/08_reporting/metrics_a_original.json
 
-# model_input:
-#   type: pandas.JSONDataset
-#   schema:
-#     checking_status: str
-#     duration: int
-#     credit_history: str
-#     purpose: str
-#     credit_amount: float
-#     savings_status: str
-#     employment: str
-#     installment_commitment: int
-#     personal_status: str
-#     other_parties: str
-#     residence_since: int
-#     property_magnitude: str
-#     age: int
-#     other_payment_plans: str
-#     housing: str
-#     existing_credits: int
-#     job: str
-#     num_dependents: int
-#     own_telephone: str
-#     foreign_worker: str
-#     health_status: str
+metrics_a_new:
+  type: json.JSONDataset
+  filepath: data/08_reporting/metrics_a_new.json
 
-# # Define your model output schema
-# model_output:
-#   type: dict
-#   schema:
-#     prediction: bool
-#     probability: float
+metrics_b_new:
+  type: json.JSONDataset
+  filepath: data/08_reporting/metrics_b_new.json
+
+selected_model:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
+  dataset:
+    type: kedro_mlflow.io.models.MlflowModelLocalFileSystemDataset
+    flavor: mlflow.sklearn
+    filepath: data/06_models/selected_model.pickle
+
+selected_model_name:
+  type: MemoryDataset

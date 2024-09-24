@@ -28,9 +28,10 @@ import os
 
 class MLflowModelDeploymentHook:
     @hook_impl
-    def after_pipeline_run(self):
+    def after_pipeline_run(self, catalog):
+        selected_model_name = catalog.load("selected_model_name")
         client = mlflow.tracking.MlflowClient()
-        latest_version = client.get_latest_versions("Model", stages=["None"])[0]
+        latest_version = client.get_latest_versions("Model_" + selected_model_name, stages=["None"])[0]
         artifact_uri = latest_version.source
         local_path = artifact_uri.replace("file://", "")
         absolute_model_path = os.path.abspath(local_path)
@@ -48,3 +49,28 @@ class MLflowModelDeploymentHook:
         ], check=True)
         
         print(f"Deployed latest model version: {latest_version.version}")
+
+        latest_version = client.get_latest_versions("Model_" + selected_model_name, stages=["None"])[0].version
+
+        client.transition_model_version_stage(
+            name="Model_"+selected_model_name,
+            version=latest_version,
+            stage="Production"
+        )
+
+        not_selected_model_name = "Model_B" if selected_model_name[-1] == "A" else "Model_A"
+        not_selected_latest_version = client.get_latest_versions("Model_" + not_selected_model_name, stages=["None"])[0].version
+        
+        client.transition_model_version_stage(
+            name="Model_"+selected_model_name,
+            version=latest_version - 1,
+            stage="None"
+        )
+        client.transition_model_version_stage(
+            name="Model_"+not_selected_model_name,
+            version=not_selected_latest_version,
+            stage="None"
+        )
+    
+
+        print(f"Transitioned {selected_model_name} version {latest_version} to Production stage")

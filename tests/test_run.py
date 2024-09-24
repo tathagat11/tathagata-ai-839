@@ -60,8 +60,8 @@ def test_full_run(sample_data, model_parameters):
     
     # Data Science Pipeline
     split_result = split_data_science(features, target, model_parameters)
-    model = train_model(split_result["X_train"], split_result["y_train"], model_parameters)
-    metrics = evaluate_model(model, split_result["X_test"], split_result["y_test"])
+    model = train_model(split_result["X_train"], split_result["y_train"], model_parameters, model_name="model_A")
+    metrics = evaluate_model(model, split_result["X_test"], split_result["y_test"], model_name="model_A")
     
     # Assertions
     assert loaded_data is not None
