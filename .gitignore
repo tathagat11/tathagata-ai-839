@@ -22,6 +22,9 @@ data/**
 # keep also the example dataset
 !data/01_raw/*
 
+# keep the data reports
+!data/09_data_exploration/*
+
 
 ##########################
 # Common files
