@@ -9,6 +9,9 @@ RUN pip install fastapi uvicorn mlflow pandas scikit-learn numpy
 # Copy the custom server script
 COPY model_server.py /app/
 
+# Copy data for column transformer
+COPY data/01_raw/dataset_id_T01_V3_96.csv /app/data/
+
 # Expose the port the app runs on
 EXPOSE 5002
 

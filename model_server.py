@@ -72,44 +72,43 @@ numerical_columns = ['duration', 'credit_amount', 'installment_commitment', 'res
                      'existing_credits', 'num_dependents', 'X_1', 'X_2', 'X_3', 'X_4', 'X_5', 'X_6',
                      'X_7', 'X_8', 'X_9', 'X_10']
 
-def create_preprocessor():
-    categorical_transformer = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
-    numerical_transformer = StandardScaler()
-    
+
+def create_preprocessor(sample_data):
+    categorical_columns = sample_data.select_dtypes(include=['object']).columns
+    numerical_columns = sample_data.select_dtypes(include=['int64', 'float64']).columns
+
     preprocessor = ColumnTransformer(
         transformers=[
-            ('num', numerical_transformer, numerical_columns),
-            ('cat', categorical_transformer, categorical_columns)
+            ('num', StandardScaler(), numerical_columns),
+            ('cat', OneHotEncoder(sparse_output=False, handle_unknown='ignore'), categorical_columns)
         ])
-    
+    # Fit the preprocessor on the sample data
+    preprocessor.fit(sample_data)
     return preprocessor
 
+sample_data = pd.read_csv("/app/data/dataset_id_T01_V3_96.csv")
+preprocessor = create_preprocessor(sample_data)
 
 model = mlflow.pyfunc.load_model("/models")
-preprocessor = create_preprocessor()
-
 
 def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
-    # Preprocess the data
-    X_processed = preprocessor.fit_transform(df)
+    # Transform the data using the fitted preprocessor
+    X_processed = preprocessor.transform(df)
     
     # Get feature names
-    onehot_cols = preprocessor.named_transformers_['cat'].get_feature_names_out(categorical_columns)
-    feature_names = numerical_columns + list(onehot_cols)
+    feature_names = (preprocessor.named_transformers_['num'].get_feature_names_out().tolist() +
+                     preprocessor.named_transformers_['cat'].get_feature_names_out().tolist())
     
     # Create DataFrame with correct column names
     processed_df = pd.DataFrame(X_processed, columns=feature_names, index=df.index)
 
+    # Ensure all expected columns are present and in the right order
     expected_columns = model.metadata.get_input_schema().input_names()
     for col in expected_columns:
         if col not in processed_df.columns:
-            processed_df[col] = 0.0  # Add missing columns with default value 0.0
+            processed_df[col] = 0.0
     
-    # Reorder columns to match the expected order
     processed_df = processed_df.reindex(columns=expected_columns)
-    
-    # Convert all columns to float64
-    processed_df = processed_df.astype(float)
     
     return processed_df
 
