@@ -6,6 +6,7 @@ Building a Large Language Model (From Scratch). Book by Sebastian Raschka
 Axiomatic Attribution for Deep Networks. This paper was the precursor to XAI methods like Grad-CAM and Grad-CAM++ and variants.
 Explaining and Harnessing Adversarial Examples(2014). This was the precursor to many adversarial attacks papers and robustness methods in DL and grown into a massive research area with implications in AI security.
 code Compute gradients of a Deep Network w.r.t to inputs and apply them in XAI and Adversatial Attacks. Video tutorial here
+
 Task:
 
 Create Midterm-Bonus branch of your private AI-839 repo.
