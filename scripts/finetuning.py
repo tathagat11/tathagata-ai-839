@@ -1,4 +1,3 @@
-
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -311,30 +310,10 @@ for epoch in range(num_epochs):
     
     if val_loss < best_val_loss:
         best_val_loss = val_loss
-        torch.save(model.state_dict(), 'data/models/best_model_spam.pth')
-    
+        # torch.save(model.state_dict(), 'best_model_spam.pth')
+        with open('data/models/model-05-spam_finetuned.pkl', 'wb') as f:
+            pickle.dump(model, f)
+        print('model saved')
     print()
-
-
-model.load_state_dict(torch.load('data/models/best_model_spam.pth'))
-model.eval()
-
-def predict(text):
-    encoded = encode(text)
-    if len(encoded) > block_size:
-        encoded = encoded[:block_size]
-    else:
-        encoded = encoded + [0] * (block_size - len(encoded))
-    encoded = torch.tensor([encoded], dtype=torch.long).to(device)
-    with torch.no_grad():
-        prob = model.classify(encoded)
-    return prob.item()
-
-text1 = "Buy my course for 50% off"
-text2 = "Hi pls come 2 games volrent"
-prob1 = predict(text1)
-prob2 = predict(text2)
-print(f"Probability of text 1 being spam: {prob1:.4f}")
-print(f"Probability of text 2 being spam: {prob2:.4f}")
 
 
