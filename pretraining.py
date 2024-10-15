@@ -13,7 +13,7 @@ block_size = 128
 batch_size = 64
 max_iters = 1000
 learning_rate = 3e-4
-eval_iters = 100
+eval_iters = 50
 n_embd = 384
 n_layer = 8
 n_head = 8
@@ -187,10 +187,10 @@ class GPTLanguageModel(nn.Module):
         return index
     
 model = GPTLanguageModel(vocab_size)
-# print("Loading previously trained parameters...")
-# with open("data/models/model-03-reddit_text.pkl", 'rb') as f:
-#     model = pickle.load(f)
-# print("Model loaded.")
+print("Loading previously trained parameters...")
+with open("data/models/model-04-reddit_text.pkl", 'rb') as f:
+    model = pickle.load(f)
+print("Model loaded.")
 m = model.to(device)
 
 

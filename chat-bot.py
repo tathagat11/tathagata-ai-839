@@ -160,7 +160,7 @@ class GPTLanguageModel(nn.Module):
 
 model = GPTLanguageModel(vocab_size)
 print('loading model parameters...')
-with open('data/models/model-03-reddit_text.pkl', 'rb') as f:
+with open('data/models/model-04-reddit_text.pkl', 'rb') as f:
     model = pickle.load(f)
 print('loaded successfully!')
 m = model.to(device)
