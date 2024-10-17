@@ -10,7 +10,6 @@
 ## Model Architecture
 - **Base Estimators**: 10.0 decision trees
 - **Max Depth**: 10
-- **Feature Selection**: sqrt
 - **Criterion**: gini
 
 ## Model Parameters
@@ -37,10 +36,10 @@
 }
 
 ## Performance Metrics
-- **Accuracy**: 0.95
-- **Precision**: 0.88
+- **Accuracy**: 0.83
+- **Precision**: 0.70
 - **Recall**: 1.00
-- **F1 Score**: 0.93
+- **F1 Score**: 0.82
 
 ## Training Data
 - **Dataset**: dataset_id_96

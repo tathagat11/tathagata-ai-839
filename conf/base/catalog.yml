@@ -4,6 +4,10 @@ dataset_id_96:
     type: pandas.CSVDataset
     filepath: data/01_raw/dataset_id_96.csv
 
+erasure_list:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/erasure_list.csv
+
 loaded_data:
   type: pandas.ParquetDataset
   filepath: data/02_intermediate/loaded_data.parquet

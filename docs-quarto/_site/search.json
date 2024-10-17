@@ -4,7 +4,7 @@
     "href": "data_card.html",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0\n\n\n\n\n\nNumber of Instances: 100\nNumber of Features: 32\nTarget Variable: y (boolean)\n\n\n\n\n\nNumber of Features: 32\nNumber of Rows: 100\nMissing Values: 0.0%\n\n\n\n\nchecking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y\n\n\n\n\nchecking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)\n\n\n\n\n\nMethod: Unknown\n\n\n\n\nThis dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.\n\n\n\n\nEnsure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts.\n\n\n\n\n\nThe dataset is relatively small (100 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.",
+    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0\n\n\n\n\n\nNumber of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)\n\n\n\n\n\nNumber of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%\n\n\n\n\nchecking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y\n\n\n\n\nchecking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)\n\n\n\n\n\nMethod: Unknown\n\n\n\n\nThis dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.\n\n\n\n\nEnsure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts.\n\n\n\n\n\nThe dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.",
     "crumbs": [
       "Read The Docs",
       "Cards",
@@ -28,7 +28,7 @@
     "href": "data_card.html#dataset-characteristics",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "Number of Instances: 100\nNumber of Features: 32\nTarget Variable: y (boolean)",
+    "text": "Number of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)",
     "crumbs": [
       "Read The Docs",
       "Cards",
@@ -40,7 +40,7 @@
     "href": "data_card.html#data-quality-metrics",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "Number of Features: 32\nNumber of Rows: 100\nMissing Values: 0.0%",
+    "text": "Number of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%",
     "crumbs": [
       "Read The Docs",
       "Cards",
@@ -112,7 +112,7 @@
     "href": "data_card.html#known-limitations",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "The dataset is relatively small (100 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.",
+    "text": "The dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.",
     "crumbs": [
       "Read The Docs",
       "Cards",
@@ -205,7 +205,7 @@
     "href": "data_card_content.html",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0\n\n\n\n\n\nNumber of Instances: 100\nNumber of Features: 32\nTarget Variable: y (boolean)\n\n\n\n\n\nNumber of Features: 32\nNumber of Rows: 100\nMissing Values: 0.0%\n\n\n\n\nchecking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y\n\n\n\n\nchecking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)\n\n\n\n\n\nMethod: Unknown\n\n\n\n\nThis dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.\n\n\n\n\nEnsure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts.\n\n\n\n\n\nThe dataset is relatively small (100 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent."
+    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0\n\n\n\n\n\nNumber of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)\n\n\n\n\n\nNumber of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%\n\n\n\n\nchecking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y\n\n\n\n\nchecking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)\n\n\n\n\n\nMethod: Unknown\n\n\n\n\nThis dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.\n\n\n\n\nEnsure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts.\n\n\n\n\n\nThe dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent."
   },
   {
     "objectID": "data_card_content.html#dataset-information",
@@ -219,14 +219,14 @@
     "href": "data_card_content.html#dataset-characteristics",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "Number of Instances: 100\nNumber of Features: 32\nTarget Variable: y (boolean)"
+    "text": "Number of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)"
   },
   {
     "objectID": "data_card_content.html#data-quality-metrics",
     "href": "data_card_content.html#data-quality-metrics",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "Number of Features: 32\nNumber of Rows: 100\nMissing Values: 0.0%"
+    "text": "Number of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%"
   },
   {
     "objectID": "data_card_content.html#features",
@@ -268,7 +268,7 @@
     "href": "data_card_content.html#known-limitations",
     "title": "Data Card: dataset_id_96",
     "section": "",
-    "text": "The dataset is relatively small (100 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent."
+    "text": "The dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent."
   },
   {
     "objectID": "reference/index.html",
@@ -322,7 +322,7 @@
     "href": "model_card_content.html#model-architecture",
     "title": "",
     "section": "Model Architecture",
-    "text": "Model Architecture\n\nBase Estimators: 10.0 decision trees\nMax Depth: 10\nFeature Selection: sqrt\nCriterion: gini"
+    "text": "Model Architecture\n\nBase Estimators: 10.0 decision trees\nMax Depth: 10\nCriterion: gini"
   },
   {
     "objectID": "model_card_content.html#model-parameters",
@@ -336,7 +336,7 @@
     "href": "model_card_content.html#performance-metrics",
     "title": "",
     "section": "Performance Metrics",
-    "text": "Performance Metrics\n\nAccuracy: 0.95\nPrecision: 0.88\nRecall: 1.00\nF1 Score: 0.93"
+    "text": "Performance Metrics\n\nAccuracy: 0.83\nPrecision: 0.70\nRecall: 1.00\nF1 Score: 0.82"
   },
   {
     "objectID": "model_card_content.html#training-data",
@@ -400,7 +400,7 @@
     "href": "model_card.html#model-architecture",
     "title": "Model Card: Credit Risk Assessment Model",
     "section": "Model Architecture",
-    "text": "Model Architecture\n\nBase Estimators: 10.0 decision trees\nMax Depth: 10\nFeature Selection: sqrt\nCriterion: gini",
+    "text": "Model Architecture\n\nBase Estimators: 10.0 decision trees\nMax Depth: 10\nCriterion: gini",
     "crumbs": [
       "Read The Docs",
       "Cards",
@@ -424,7 +424,7 @@
     "href": "model_card.html#performance-metrics",
     "title": "Model Card: Credit Risk Assessment Model",
     "section": "Performance Metrics",
-    "text": "Performance Metrics\n\nAccuracy: 0.95\nPrecision: 0.88\nRecall: 1.00\nF1 Score: 0.93",
+    "text": "Performance Metrics\n\nAccuracy: 0.83\nPrecision: 0.70\nRecall: 1.00\nF1 Score: 0.82",
     "crumbs": [
       "Read The Docs",
       "Cards",

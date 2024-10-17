@@ -1,5 +1,5 @@
 from kedro.pipeline import Pipeline, pipeline, node
-from .nodes import load_data, preprocess_data, split_data, run_data_quality_checks, create_data_card
+from .nodes import load_and_erase_data, preprocess_data, split_data, run_data_quality_checks, create_data_card
 
 def create_pipeline(**kwargs) -> Pipeline:
     """
@@ -14,8 +14,8 @@ def create_pipeline(**kwargs) -> Pipeline:
     return pipeline(
         [
             node(
-                func=load_data,
-                inputs="dataset_id_96",
+                func=load_and_erase_data,
+                inputs=["dataset_id_96", "erasure_list"],
                 outputs="loaded_data",
                 name="load_data",
             ),

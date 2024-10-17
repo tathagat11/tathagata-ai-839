@@ -7,13 +7,13 @@
 - **Version**: 1.0
 
 ## Dataset Characteristics
-- **Number of Instances**: 100
+- **Number of Instances**: 90
 - **Number of Features**: 32
 - **Target Variable**: y (boolean)
 
 ## Data Quality Metrics
 - **Number of Features**: 32
-- **Number of Rows**: 100
+- **Number of Rows**: 90
 - **Missing Values**: 0.0%
 
 ## Features
@@ -47,7 +47,7 @@ This dataset is intended for credit risk assessment. It can be used to train mac
 - Consider the implications of using this data for decision-making in financial contexts.
 
 ## Known Limitations
-- The dataset is relatively small (100 instances), which may limit its representativeness.
+- The dataset is relatively small (90 instances), which may limit its representativeness.
 - Some categorical variables may have imbalanced categories.
 - The additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.
     

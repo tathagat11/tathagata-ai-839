@@ -9,9 +9,9 @@ import json
 
 logger = logging.getLogger(__name__)
 
-def load_data(data: pd.DataFrame) -> pd.DataFrame:
+def load_and_erase_data(data: pd.DataFrame, erasure_list: pd.DataFrame) -> pd.DataFrame:
     """
-    Load the data from the CSV file.
+    Load the data from the CSV file and implement right to erasure.
 
     Args:
         data: Raw DataFrame loaded by Kedro
@@ -19,7 +19,8 @@ def load_data(data: pd.DataFrame) -> pd.DataFrame:
     Returns:
         Loaded DataFrame
     """
-    return data
+    indices_to_erase = erasure_list['index'].tolist()
+    return data.drop(indices_to_erase)
 
 
 def run_data_quality_checks(df: pd.DataFrame) -> Dict:
@@ -143,6 +144,7 @@ def create_data_card(loaded_data: pd.DataFrame, data_quality_metrics: Dict) -> N
     """
     data_card = {
         "dataset_name": "dataset_id_96",
+
         "number_of_rows": len(loaded_data),
         "number_of_features": len(loaded_data.columns),
         "feature_names": list(loaded_data.columns),
