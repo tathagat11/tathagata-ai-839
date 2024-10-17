@@ -1,7 +1,6 @@
 website:
   sidebar:
   - contents:
-    - reference/index.qmd
     - contents:
       - reference/pipelines.data_processing.nodes.qmd
       section: Data Processing
@@ -15,5 +14,8 @@ website:
     - contents:
       - api-docs.qmd
       section: API Documentation
-    id: reference
+    - contents:
+      - data_card.qmd
+      - model_card.qmd
+      section: Cards
   - id: dummy-sidebar

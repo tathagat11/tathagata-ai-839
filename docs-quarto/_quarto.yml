@@ -28,3 +28,8 @@ sections:
     contents:
       - pipelines.data_processing.pipeline
       - pipelines.data_science.pipeline
+  - title: Cards
+    desc: Data and Model Cards
+    contents:
+      - data_card
+      - model_card

@@ -1,7 +1,16 @@
 from kedro.pipeline import Pipeline, pipeline, node
-from .nodes import load_data, preprocess_data, split_data, run_data_quality_checks
+from .nodes import load_data, preprocess_data, split_data, run_data_quality_checks, create_data_card
 
 def create_pipeline(**kwargs) -> Pipeline:
+    """
+    Create the data processing pipeline.
+
+    Args:
+        **kwargs: Additional keyword arguments passed to the pipeline constructor
+
+    Returns:
+        Pipeline: The data processing pipeline
+    """
     return pipeline(
         [
             node(
@@ -28,5 +37,11 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs={"features": "features", "target": "target"},
                 name="split_data",
             ),
+            node(
+                func=create_data_card,
+                inputs=["loaded_data", "data_quality_metrics"],
+                outputs="data_card",
+                name="create_data_card",
+            )
         ]
     )

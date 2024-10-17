@@ -1,0 +1,5 @@
+---
+title: "Model Card: Credit Risk Assessment Model"
+---
+
+{{< include model_card_content.md >}}

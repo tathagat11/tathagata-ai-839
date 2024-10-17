@@ -5,6 +5,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 from .data_quality import generate_data_quality_report, get_data_quality_metrics
 import logging
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -135,3 +136,17 @@ def split_data(df: pd.DataFrame, target_column: str = "y") -> Dict[str, pd.DataF
     X = df.drop(columns=[target_column])
     y = df[[target_column]]  # Keep as DataFrame instead of Series
     return {"features": X, "target": y}
+
+def create_data_card(loaded_data: pd.DataFrame, data_quality_metrics: Dict) -> None:
+    """
+    Creates a data card based on the loaded data and data quality metrics.
+    """
+    data_card = {
+        "dataset_name": "dataset_id_96",
+        "number_of_rows": len(loaded_data),
+        "number_of_features": len(loaded_data.columns),
+        "feature_names": list(loaded_data.columns),
+        "data_quality_metrics": data_quality_metrics
+    }
+    return json.dumps(data_card)
+

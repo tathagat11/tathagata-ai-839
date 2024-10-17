@@ -1,0 +1,5 @@
+---
+title: "Data Card: dataset_id_96"
+---
+
+{{< include data_card_content.md >}}

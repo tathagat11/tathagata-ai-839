@@ -69,6 +69,14 @@ metrics:
   type: json.JSONDataset
   filepath: data/08_reporting/metrics.json
 
+data_card:
+  type: json.JSONDataset
+  filepath: data/08_reporting/data-card/data_card.json
+
+model_card:
+  type: json.JSONDataset
+  filepath: data/08_reporting/model-card/model_card.json
+
 # model_input:
 #   type: pandas.JSONDataset
 #   schema:

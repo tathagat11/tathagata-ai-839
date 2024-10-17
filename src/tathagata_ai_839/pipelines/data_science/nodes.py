@@ -125,3 +125,14 @@ def evaluate_model(
     mlflow.log_metric("test_f1", f1)
     
     return {"accuracy": accuracy, "precision": precision, "recall": recall, "f1": f1}
+
+def create_model_card(model, metrics: Dict) -> None:
+    """
+    Creates a model card based on the trained model and evaluation metrics.
+    """
+    model_card = {
+        "model_type": type(model).__name__,
+        "model_parameters": model.get_params(),
+        "evaluation_metrics": metrics
+    }
+    return json.dumps(model_card)

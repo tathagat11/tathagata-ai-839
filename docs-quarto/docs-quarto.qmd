@@ -14,3 +14,8 @@ The API reference for this project has been automatically generated. You can fin
 - [Data Science Pipeline](reference/pipelines.data_science.pipeline.qmd)
 
 For a complete list of all documented items, see the [Index](reference/index.qmd).
+
+## Data and Model Cards
+
+- [Data Card](data_card.qmd)
+- [Model Card](model_card.qmd)
