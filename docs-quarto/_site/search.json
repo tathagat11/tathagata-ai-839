@@ -1,125 +1,5 @@
 [
   {
-    "objectID": "data_card.html",
-    "href": "data_card.html",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0\n\n\n\n\n\nNumber of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)\n\n\n\n\n\nNumber of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%\n\n\n\n\nchecking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y\n\n\n\n\nchecking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)\n\n\n\n\n\nMethod: Unknown\n\n\n\n\nThis dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.\n\n\n\n\nEnsure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts.\n\n\n\n\n\nThe dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#dataset-information",
-    "href": "data_card.html#dataset-information",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#dataset-characteristics",
-    "href": "data_card.html#dataset-characteristics",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Number of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#data-quality-metrics",
-    "href": "data_card.html#data-quality-metrics",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Number of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#features",
-    "href": "data_card.html#features",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "checking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#feature-descriptions",
-    "href": "data_card.html#feature-descriptions",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "checking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#data-collection",
-    "href": "data_card.html#data-collection",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Method: Unknown",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#intended-use",
-    "href": "data_card.html#intended-use",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "This dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#ethical-considerations",
-    "href": "data_card.html#ethical-considerations",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Ensure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts.",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
-    "objectID": "data_card.html#known-limitations",
-    "href": "data_card.html#known-limitations",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "The dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Data Card: dataset_id_96"
-    ]
-  },
-  {
     "objectID": "docs-quarto.html",
     "href": "docs-quarto.html",
     "title": "tathagata_ai_839 Documentation",
@@ -131,49 +11,56 @@
     "href": "docs-quarto.html#api-reference",
     "title": "tathagata_ai_839 Documentation",
     "section": "API Reference",
-    "text": "API Reference\nThe API reference for this project has been automatically generated. You can find the documentation for different modules here:\n\nData Processing Nodes\nData Science Nodes\nData Processing Pipeline\nData Science Pipeline\n\nFor a complete list of all documented items, see the Index."
+    "text": "API Reference\nThe API reference for this project has been automatically generated. You can find the documentation for different modules here:\n\nData Processing Nodes\nData Science Nodes\nData Processing Pipeline\nData Science Pipeline\nDataset Card\nModel Card"
   },
   {
-    "objectID": "docs-quarto.html#data-and-model-cards",
-    "href": "docs-quarto.html#data-and-model-cards",
-    "title": "tathagata_ai_839 Documentation",
-    "section": "Data and Model Cards",
-    "text": "Data and Model Cards\n\nData Card\nModel Card"
-  },
-  {
-    "objectID": "reference/pipelines.data_processing.nodes.html",
-    "href": "reference/pipelines.data_processing.nodes.html",
-    "title": "pipelines.data_processing.nodes",
+    "objectID": "reference/pipelines.data_processing.pipeline.html",
+    "href": "reference/pipelines.data_processing.pipeline.html",
+    "title": "pipelines.data_processing.pipeline",
     "section": "",
-    "text": "pipelines.data_processing.nodes\n\n\n\n\n\nName\nDescription\n\n\n\n\nidentify_categorical_columns\nIdentify categorical columns in the DataFrame.\n\n\nidentify_numerical_columns\nIdentify numerical columns in the DataFrame.\n\n\nload_data\nLoad the data from the CSV file.\n\n\npreprocess_data\nPreprocess the data by handling categorical variables, scaling numerical variables,\n\n\nrun_data_quality_checks\nRun data quality checks on the input data.\n\n\nsplit_data\nSplit the data into features and target.\n\n\n\n\n\npipelines.data_processing.nodes.identify_categorical_columns(df)\nIdentify categorical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of categorical column names\n\n\n\npipelines.data_processing.nodes.identify_numerical_columns(df)\nIdentify numerical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of numerical column names\n\n\n\npipelines.data_processing.nodes.load_data(data)\nLoad the data from the CSV file.\nArgs: data: Raw DataFrame loaded by Kedro\nReturns: Loaded DataFrame\n\n\n\npipelines.data_processing.nodes.preprocess_data(df)\nPreprocess the data by handling categorical variables, scaling numerical variables, and separating the target variable.\nArgs: df: Raw DataFrame\nReturns: Preprocessed DataFrame\n\n\n\npipelines.data_processing.nodes.run_data_quality_checks(df)\nRun data quality checks on the input data.\nArgs: df: Input DataFrame\nReturns: Dictionary containing key metrics\n\n\n\npipelines.data_processing.nodes.split_data(df, target_column='y')\nSplit the data into features and target.\nArgs: df: Preprocessed DataFrame target_column: Name of the target column\nReturns: Dictionary containing ‘features’ and ‘target’ as DataFrames",
-    "crumbs": [
-      "Read The Docs",
-      "Data Processing",
-      "pipelines.data_processing.nodes"
-    ]
-  },
-  {
-    "objectID": "reference/pipelines.data_processing.nodes.html#functions",
-    "href": "reference/pipelines.data_processing.nodes.html#functions",
-    "title": "pipelines.data_processing.nodes",
-    "section": "",
-    "text": "Name\nDescription\n\n\n\n\nidentify_categorical_columns\nIdentify categorical columns in the DataFrame.\n\n\nidentify_numerical_columns\nIdentify numerical columns in the DataFrame.\n\n\nload_data\nLoad the data from the CSV file.\n\n\npreprocess_data\nPreprocess the data by handling categorical variables, scaling numerical variables,\n\n\nrun_data_quality_checks\nRun data quality checks on the input data.\n\n\nsplit_data\nSplit the data into features and target.\n\n\n\n\n\npipelines.data_processing.nodes.identify_categorical_columns(df)\nIdentify categorical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of categorical column names\n\n\n\npipelines.data_processing.nodes.identify_numerical_columns(df)\nIdentify numerical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of numerical column names\n\n\n\npipelines.data_processing.nodes.load_data(data)\nLoad the data from the CSV file.\nArgs: data: Raw DataFrame loaded by Kedro\nReturns: Loaded DataFrame\n\n\n\npipelines.data_processing.nodes.preprocess_data(df)\nPreprocess the data by handling categorical variables, scaling numerical variables, and separating the target variable.\nArgs: df: Raw DataFrame\nReturns: Preprocessed DataFrame\n\n\n\npipelines.data_processing.nodes.run_data_quality_checks(df)\nRun data quality checks on the input data.\nArgs: df: Input DataFrame\nReturns: Dictionary containing key metrics\n\n\n\npipelines.data_processing.nodes.split_data(df, target_column='y')\nSplit the data into features and target.\nArgs: df: Preprocessed DataFrame target_column: Name of the target column\nReturns: Dictionary containing ‘features’ and ‘target’ as DataFrames",
-    "crumbs": [
-      "Read The Docs",
-      "Data Processing",
-      "pipelines.data_processing.nodes"
-    ]
-  },
-  {
-    "objectID": "reference/pipelines.data_science.pipeline.html",
-    "href": "reference/pipelines.data_science.pipeline.html",
-    "title": "pipelines.data_science.pipeline",
-    "section": "",
-    "text": "pipelines.data_science.pipeline\npipelines.data_science.pipeline",
+    "text": "pipelines.data_processing.pipeline\npipelines.data_processing.pipeline",
     "crumbs": [
       "Read The Docs",
       "Pipelines",
-      "pipelines.data_science.pipeline"
+      "pipelines.data_processing.pipeline"
+    ]
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "tathagata-ai-839"
+  },
+  {
+    "objectID": "reference/index.html#tathagata_ai_839",
+    "href": "reference/index.html#tathagata_ai_839",
+    "title": "Function reference",
+    "section": "",
+    "text": "tathagata-ai-839"
+  },
+  {
+    "objectID": "data_card.html",
+    "href": "data_card.html",
+    "title": "Data Card",
+    "section": "",
+    "text": "Dataset Description\n\n\nCode\nimport json\nfrom rich import print\nfrom pathlib import Path\n\nname = \"dataset_id_96\"\ndescription = \"Credit risk assessment dataset\"\ncreation_date = \"Unknown\"\nversion = \"1.0\"\n\nprint(f\"\"\"• [bold]Name[/bold]: {name}\n• [bold]Description[/bold]: {description}\n• [bold]Version[/bold]: {version}\"\"\")\n\n\n• Name: dataset_id_96\n• Description: Credit risk assessment dataset\n• Version: 1.0\n\n\n\n\n\nDataset Characteristics\n\n\nCode\nproject_dir = Path().absolute().parent\ndata_card_path = project_dir / \"data\" / \"08_reporting\" / \"data-card\" / \"data_card.json\"\n\nwith open(data_card_path) as f:\n    data_card = json.load(f)\n    data_card = json.loads(data_card)\nprint(f\"\"\"• [bold]Number of Instances[/bold]: {data_card['number_of_rows']}\n• [bold]Number of Features[/bold]: {data_card['number_of_features']}\n• [bold]Target Variable[/bold]: y (boolean)\"\"\")\n\n\n• Number of Instances: 90\n• Number of Features: 32\n• Target Variable: y (boolean)\n\n\n\n\n\nFeatures\n\n\nCode\nfeatures_list = [f\"{i + 1}. {data_card['feature_names'][i]}\" \n                 for i in range(len(data_card[\"feature_names\"]))]\nprint(\"\\n\".join(features_list))\n\n\n1. checking_status\n2. duration\n3. credit_history\n4. purpose\n5. credit_amount\n6. savings_status\n7. employment\n8. installment_commitment\n9. personal_status\n10. other_parties\n11. residence_since\n12. property_magnitude\n13. age\n14. other_payment_plans\n15. housing\n16. existing_credits\n17. job\n18. num_dependents\n19. own_telephone\n20. foreign_worker\n21. health_status\n22. X_1\n23. X_2\n24. X_3\n25. X_4\n26. X_5\n27. X_6\n28. X_7\n29. X_8\n30. X_9\n31. X_10\n32. y\n\n\n\n\n\nData Collection\n\n\nCode\nmethod = \"Unknown\"\nprint(f\"• [bold]Method[/bold]: {method}\")\n\n\n• Method: Unknown\n\n\n\n\n\nIntended Use\n\n\nCode\nprint(\"\"\"This dataset can be used to train machine learning models to predict the likelihood of\ncredit default.\n      \"\"\")\n\n\nThis dataset can be used to train machine learning models to predict the likelihood of\ncredit default.\n      \n\n\n\n\n\nEthical Considerations\n\n\nCode\nprint(\"\"\"• Ensure fair and unbiased use of the data, particularly regarding protected attributes \n  like personal status.\n• Be cautious of potential biases in the original data collection process.\n• Consider the implications of using this data for decision-making in financial contexts.\"\"\")\n\n\n• Ensure fair and unbiased use of the data, particularly regarding protected attributes \n  like personal status.\n• Be cautious of potential biases in the original data collection process.\n• Consider the implications of using this data for decision-making in financial contexts.\n\n\n\n\n\nKnown Limitations\n\n\nCode\nprint(f\"\"\"• The dataset is relatively small ({data_card['number_of_rows']} instances), which may limit its representativeness.\n• Some categorical variables may have imbalanced categories.\n• The additional numerical features (X_1 to X_10) lack clear descriptions of what they\n  represent.\n      \"\"\")\n\n\n• The dataset is relatively small (90 instances), which may limit its representativeness.\n• Some categorical variables may have imbalanced categories.\n• The additional numerical features (X_1 to X_10) lack clear descriptions of what they\n  represent.",
+    "crumbs": [
+      "Read The Docs",
+      "Cards",
+      "Data Card"
+    ]
+  },
+  {
+    "objectID": "model_card.html",
+    "href": "model_card.html",
+    "title": "Model Card",
+    "section": "",
+    "text": "Model Description\n\n\nCode\nimport json\nfrom rich import print\nfrom pathlib import Path\n\nproject_dir = Path().absolute().parent\nmodel_card_path = project_dir / \"data\" / \"08_reporting\" / \"model-card\" / \"model_card.json\"\n\nwith open(model_card_path) as f:\n    model_card = json.load(f)\n    model_card = json.loads(model_card)\n\nprint(f\"\"\"• [bold]Model Type[/bold]: {model_card['model_type']}\"\"\")\n\n\n• Model Type: RandomForestClassifier\n\n\n\n\n\nIntended Use\n\n\nCode\nprint(\"\"\"• [bold]Primary Use[/bold]: Credit risk assessment\n• [bold]Intended Users[/bold]: Financial institutions, credit analysts\"\"\")\n\n\n• Primary Use: Credit risk assessment\n• Intended Users: Financial institutions, credit analysts\n\n\n\n\n\nModel Architecture\n\n\nCode\nprint(f\"\"\"• [bold]Base Estimators[/bold]: {model_card['model_parameters']['n_estimators']} decision trees\n• [bold]Max Depth[/bold]: {model_card['model_parameters']['max_depth']}\n• [bold]Criterion[/bold]: {model_card['model_parameters']['criterion']}\"\"\")\n\n\n• Base Estimators: 10 decision trees\n• Max Depth: 5\n• Criterion: gini\n\n\n\n\n\nModel Parameters\n\n\nCode\nparams_list = [f\"{i + 1}. {key}: {value}\" \n               for i, (key, value) in enumerate(model_card['model_parameters'].items())]\nprint(\"\\n\".join(params_list))\n\n\n1. bootstrap: True\n2. ccp_alpha: 0.0\n3. class_weight: None\n4. criterion: gini\n5. max_depth: 5\n6. max_features: sqrt\n7. max_leaf_nodes: None\n8. max_samples: None\n9. min_impurity_decrease: 0.0\n10. min_samples_leaf: 1\n11. min_samples_split: 2\n12. min_weight_fraction_leaf: 0.0\n13. monotonic_cst: None\n14. n_estimators: 10\n15. n_jobs: None\n16. oob_score: False\n17. random_state: None\n18. verbose: 0\n19. warm_start: False\n\n\n\n\n\nPerformance Metrics\n\n\nCode\nprint(f\"\"\"• [bold]Accuracy[/bold]: {model_card['evaluation_metrics']['accuracy']:.2f}\n• [bold]Precision[/bold]: {model_card['evaluation_metrics']['precision']:.2f}\n• [bold]Recall[/bold]: {model_card['evaluation_metrics']['recall']:.2f}\n• [bold]F1 Score[/bold]: {model_card['evaluation_metrics']['f1']:.2f}\"\"\")\n\n\n• Accuracy: 0.89\n• Precision: 0.78\n• Recall: 1.00\n• F1 Score: 0.88\n\n\n\n\n\nTraining Data\n\n\nCode\nprint(\"\"\"• [bold]Dataset[/bold]: dataset_id_96\n• [bold]Splitting Method[/bold]: Random split (80% training, 20% testing)\n• [bold]Preprocessing[/bold]: Standard scaling for numerical features, one-hot encoding for\n  categorical features\"\"\")\n\n\n• Dataset: dataset_id_96\n• Splitting Method: Random split (80% training, 20% testing)\n• Preprocessing: Standard scaling for numerical features, one-hot encoding for\n  categorical features\n\n\n\n\n\nEthical Considerations\n\n\nCode\nprint(\"\"\"• Decisions based on this model's output should be explainable and challengeable.\n• The model should be used in compliance with relevant financial regulations and data\n  protection laws.\"\"\")\n\n\n• Decisions based on this model's output should be explainable and challengeable.\n• The model should be used in compliance with relevant financial regulations and data\n  protection laws.\n\n\n\n\n\nCaveats and Recommendations\n\n\nCode\nprint(\"\"\"• The model's performance may vary for different subgroups. It's recommended to evaluate\n  the model's fairness across various demographic groups.\n• Regular retraining is advised to ensure the model remains accurate as financial trends\n  evolve.\n• The model should be used in conjunction with other risk assessment methods and human\n  judgment.\"\"\")\n\n\n• The model's performance may vary for different subgroups. It's recommended to evaluate\n  the model's fairness across various demographic groups.\n• Regular retraining is advised to ensure the model remains accurate as financial trends\n  evolve.\n• The model should be used in conjunction with other risk assessment methods and human\n  judgment.",
+    "crumbs": [
+      "Read The Docs",
+      "Cards",
+      "Model Card"
     ]
   },
   {
@@ -201,270 +88,39 @@
     ]
   },
   {
-    "objectID": "data_card_content.html",
-    "href": "data_card_content.html",
-    "title": "Data Card: dataset_id_96",
+    "objectID": "reference/pipelines.data_science.pipeline.html",
+    "href": "reference/pipelines.data_science.pipeline.html",
+    "title": "pipelines.data_science.pipeline",
     "section": "",
-    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0\n\n\n\n\n\nNumber of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)\n\n\n\n\n\nNumber of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%\n\n\n\n\nchecking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y\n\n\n\n\nchecking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)\n\n\n\n\n\nMethod: Unknown\n\n\n\n\nThis dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.\n\n\n\n\nEnsure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts.\n\n\n\n\n\nThe dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent."
-  },
-  {
-    "objectID": "data_card_content.html#dataset-information",
-    "href": "data_card_content.html#dataset-information",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Name: dataset_id_96\nDescription: Credit risk assessment dataset\nVersion: 1.0"
-  },
-  {
-    "objectID": "data_card_content.html#dataset-characteristics",
-    "href": "data_card_content.html#dataset-characteristics",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Number of Instances: 90\nNumber of Features: 32\nTarget Variable: y (boolean)"
-  },
-  {
-    "objectID": "data_card_content.html#data-quality-metrics",
-    "href": "data_card_content.html#data-quality-metrics",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Number of Features: 32\nNumber of Rows: 90\nMissing Values: 0.0%"
-  },
-  {
-    "objectID": "data_card_content.html#features",
-    "href": "data_card_content.html#features",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "checking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y"
-  },
-  {
-    "objectID": "data_card_content.html#feature-descriptions",
-    "href": "data_card_content.html#feature-descriptions",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "checking_status: Status of existing checking account\ncredit_history: Credit history of the applicant\npurpose: Purpose of the credit\nsavings_status: Status of savings accounts/bonds\nemployment: Present employment since\npersonal_status: Sex & marital status\nother_parties: Other debtors / guarantors\nproperty_magnitude: Property (e.g. real estate)\nother_payment_plans: Other installment plans\nhousing: Housing (own, rent, or free)\njob: Job type\nforeign_worker: Is the applicant a foreign worker?\nhealth_status: Health status of the applicant\ny: Boolean indicating credit risk (True = good, False = bad)"
-  },
-  {
-    "objectID": "data_card_content.html#data-collection",
-    "href": "data_card_content.html#data-collection",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Method: Unknown"
-  },
-  {
-    "objectID": "data_card_content.html#intended-use",
-    "href": "data_card_content.html#intended-use",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "This dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default."
-  },
-  {
-    "objectID": "data_card_content.html#ethical-considerations",
-    "href": "data_card_content.html#ethical-considerations",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "Ensure fair and unbiased use of the data, particularly regarding protected attributes like personal status.\nBe cautious of potential biases in the original data collection process.\nConsider the implications of using this data for decision-making in financial contexts."
-  },
-  {
-    "objectID": "data_card_content.html#known-limitations",
-    "href": "data_card_content.html#known-limitations",
-    "title": "Data Card: dataset_id_96",
-    "section": "",
-    "text": "The dataset is relatively small (90 instances), which may limit its representativeness.\nSome categorical variables may have imbalanced categories.\nThe additional numerical features (X_1 to X_10) lack clear descriptions of what they represent."
-  },
-  {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
-    "section": "",
-    "text": "tathagata-ai-839"
-  },
-  {
-    "objectID": "reference/index.html#tathagata_ai_839",
-    "href": "reference/index.html#tathagata_ai_839",
-    "title": "Function reference",
-    "section": "",
-    "text": "tathagata-ai-839"
-  },
-  {
-    "objectID": "reference/pipelines.data_processing.pipeline.html",
-    "href": "reference/pipelines.data_processing.pipeline.html",
-    "title": "pipelines.data_processing.pipeline",
-    "section": "",
-    "text": "pipelines.data_processing.pipeline\npipelines.data_processing.pipeline",
+    "text": "pipelines.data_science.pipeline\npipelines.data_science.pipeline",
     "crumbs": [
       "Read The Docs",
       "Pipelines",
-      "pipelines.data_processing.pipeline"
+      "pipelines.data_science.pipeline"
     ]
   },
   {
-    "objectID": "model_card_content.html",
-    "href": "model_card_content.html",
-    "title": "",
+    "objectID": "reference/pipelines.data_processing.nodes.html",
+    "href": "reference/pipelines.data_processing.nodes.html",
+    "title": "pipelines.data_processing.nodes",
     "section": "",
-    "text": "Model Type: RandomForestClassifier"
+    "text": "pipelines.data_processing.nodes\n\n\n\n\n\nName\nDescription\n\n\n\n\nidentify_categorical_columns\nIdentify categorical columns in the DataFrame.\n\n\nidentify_numerical_columns\nIdentify numerical columns in the DataFrame.\n\n\nload_data\nLoad the data from the CSV file.\n\n\npreprocess_data\nPreprocess the data by handling categorical variables, scaling numerical variables,\n\n\nrun_data_quality_checks\nRun data quality checks on the input data.\n\n\nsplit_data\nSplit the data into features and target.\n\n\n\n\n\npipelines.data_processing.nodes.identify_categorical_columns(df)\nIdentify categorical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of categorical column names\n\n\n\npipelines.data_processing.nodes.identify_numerical_columns(df)\nIdentify numerical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of numerical column names\n\n\n\npipelines.data_processing.nodes.load_data(data)\nLoad the data from the CSV file.\nArgs: data: Raw DataFrame loaded by Kedro\nReturns: Loaded DataFrame\n\n\n\npipelines.data_processing.nodes.preprocess_data(df)\nPreprocess the data by handling categorical variables, scaling numerical variables, and separating the target variable.\nArgs: df: Raw DataFrame\nReturns: Preprocessed DataFrame\n\n\n\npipelines.data_processing.nodes.run_data_quality_checks(df)\nRun data quality checks on the input data.\nArgs: df: Input DataFrame\nReturns: Dictionary containing key metrics\n\n\n\npipelines.data_processing.nodes.split_data(df, target_column='y')\nSplit the data into features and target.\nArgs: df: Preprocessed DataFrame target_column: Name of the target column\nReturns: Dictionary containing ‘features’ and ‘target’ as DataFrames",
+    "crumbs": [
+      "Read The Docs",
+      "Data Processing",
+      "pipelines.data_processing.nodes"
+    ]
   },
   {
-    "objectID": "model_card_content.html#model-details",
-    "href": "model_card_content.html#model-details",
-    "title": "",
+    "objectID": "reference/pipelines.data_processing.nodes.html#functions",
+    "href": "reference/pipelines.data_processing.nodes.html#functions",
+    "title": "pipelines.data_processing.nodes",
     "section": "",
-    "text": "Model Type: RandomForestClassifier"
-  },
-  {
-    "objectID": "model_card_content.html#intended-use",
-    "href": "model_card_content.html#intended-use",
-    "title": "",
-    "section": "Intended Use",
-    "text": "Intended Use\n\nPrimary Use: Credit risk assessment\nIntended Users: Financial institutions, credit analysts"
-  },
-  {
-    "objectID": "model_card_content.html#model-architecture",
-    "href": "model_card_content.html#model-architecture",
-    "title": "",
-    "section": "Model Architecture",
-    "text": "Model Architecture\n\nBase Estimators: 10 decision trees\nMax Depth: 5\nCriterion: gini"
-  },
-  {
-    "objectID": "model_card_content.html#model-parameters",
-    "href": "model_card_content.html#model-parameters",
-    "title": "",
-    "section": "Model Parameters",
-    "text": "Model Parameters\n{ “bootstrap”: true, “ccp_alpha”: 0.0, “class_weight”: null, “criterion”: “gini”, “max_depth”: 5, “max_features”: “sqrt”, “max_leaf_nodes”: null, “max_samples”: null, “min_impurity_decrease”: 0.0, “min_samples_leaf”: 1, “min_samples_split”: 2, “min_weight_fraction_leaf”: 0.0, “monotonic_cst”: null, “n_estimators”: 10, “n_jobs”: null, “oob_score”: false, “random_state”: null, “verbose”: 0, “warm_start”: false }"
-  },
-  {
-    "objectID": "model_card_content.html#performance-metrics",
-    "href": "model_card_content.html#performance-metrics",
-    "title": "",
-    "section": "Performance Metrics",
-    "text": "Performance Metrics\n\nAccuracy: 0.89\nPrecision: 0.78\nRecall: 1.00\nF1 Score: 0.88"
-  },
-  {
-    "objectID": "model_card_content.html#training-data",
-    "href": "model_card_content.html#training-data",
-    "title": "",
-    "section": "Training Data",
-    "text": "Training Data\n\nDataset: dataset_id_96\nSplitting Method: Random split (80% training, 20% testing)\nPreprocessing: Standard scaling for numerical features, one-hot encoding for categorical features"
-  },
-  {
-    "objectID": "model_card_content.html#ethical-considerations",
-    "href": "model_card_content.html#ethical-considerations",
-    "title": "",
-    "section": "Ethical Considerations",
-    "text": "Ethical Considerations\n\nDecisions based on this model’s output should be explainable and challengeable.\nThe model should be used in compliance with relevant financial regulations and data protection laws."
-  },
-  {
-    "objectID": "model_card_content.html#caveats-and-recommendations",
-    "href": "model_card_content.html#caveats-and-recommendations",
-    "title": "",
-    "section": "Caveats and Recommendations",
-    "text": "Caveats and Recommendations\n\nThe model’s performance may vary for different subgroups. It’s recommended to evaluate the model’s fairness across various demographic groups.\nRegular retraining is advised to ensure the model remains accurate as financial trends evolve.\nThe model should be used in conjunction with other risk assessment methods and human judgment."
-  },
-  {
-    "objectID": "model_card.html",
-    "href": "model_card.html",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "",
-    "text": "Model Type: RandomForestClassifier",
+    "text": "Name\nDescription\n\n\n\n\nidentify_categorical_columns\nIdentify categorical columns in the DataFrame.\n\n\nidentify_numerical_columns\nIdentify numerical columns in the DataFrame.\n\n\nload_data\nLoad the data from the CSV file.\n\n\npreprocess_data\nPreprocess the data by handling categorical variables, scaling numerical variables,\n\n\nrun_data_quality_checks\nRun data quality checks on the input data.\n\n\nsplit_data\nSplit the data into features and target.\n\n\n\n\n\npipelines.data_processing.nodes.identify_categorical_columns(df)\nIdentify categorical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of categorical column names\n\n\n\npipelines.data_processing.nodes.identify_numerical_columns(df)\nIdentify numerical columns in the DataFrame.\nArgs: df: Input DataFrame\nReturns: List of numerical column names\n\n\n\npipelines.data_processing.nodes.load_data(data)\nLoad the data from the CSV file.\nArgs: data: Raw DataFrame loaded by Kedro\nReturns: Loaded DataFrame\n\n\n\npipelines.data_processing.nodes.preprocess_data(df)\nPreprocess the data by handling categorical variables, scaling numerical variables, and separating the target variable.\nArgs: df: Raw DataFrame\nReturns: Preprocessed DataFrame\n\n\n\npipelines.data_processing.nodes.run_data_quality_checks(df)\nRun data quality checks on the input data.\nArgs: df: Input DataFrame\nReturns: Dictionary containing key metrics\n\n\n\npipelines.data_processing.nodes.split_data(df, target_column='y')\nSplit the data into features and target.\nArgs: df: Preprocessed DataFrame target_column: Name of the target column\nReturns: Dictionary containing ‘features’ and ‘target’ as DataFrames",
     "crumbs": [
       "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#model-details",
-    "href": "model_card.html#model-details",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "",
-    "text": "Model Type: RandomForestClassifier",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#intended-use",
-    "href": "model_card.html#intended-use",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "Intended Use",
-    "text": "Intended Use\n\nPrimary Use: Credit risk assessment\nIntended Users: Financial institutions, credit analysts",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#model-architecture",
-    "href": "model_card.html#model-architecture",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "Model Architecture",
-    "text": "Model Architecture\n\nBase Estimators: 10 decision trees\nMax Depth: 5\nCriterion: gini",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#model-parameters",
-    "href": "model_card.html#model-parameters",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "Model Parameters",
-    "text": "Model Parameters\n{ “bootstrap”: true, “ccp_alpha”: 0.0, “class_weight”: null, “criterion”: “gini”, “max_depth”: 5, “max_features”: “sqrt”, “max_leaf_nodes”: null, “max_samples”: null, “min_impurity_decrease”: 0.0, “min_samples_leaf”: 1, “min_samples_split”: 2, “min_weight_fraction_leaf”: 0.0, “monotonic_cst”: null, “n_estimators”: 10, “n_jobs”: null, “oob_score”: false, “random_state”: null, “verbose”: 0, “warm_start”: false }",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#performance-metrics",
-    "href": "model_card.html#performance-metrics",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "Performance Metrics",
-    "text": "Performance Metrics\n\nAccuracy: 0.89\nPrecision: 0.78\nRecall: 1.00\nF1 Score: 0.88",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#training-data",
-    "href": "model_card.html#training-data",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "Training Data",
-    "text": "Training Data\n\nDataset: dataset_id_96\nSplitting Method: Random split (80% training, 20% testing)\nPreprocessing: Standard scaling for numerical features, one-hot encoding for categorical features",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#ethical-considerations",
-    "href": "model_card.html#ethical-considerations",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "Ethical Considerations",
-    "text": "Ethical Considerations\n\nDecisions based on this model’s output should be explainable and challengeable.\nThe model should be used in compliance with relevant financial regulations and data protection laws.",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
-    ]
-  },
-  {
-    "objectID": "model_card.html#caveats-and-recommendations",
-    "href": "model_card.html#caveats-and-recommendations",
-    "title": "Model Card: Credit Risk Assessment Model",
-    "section": "Caveats and Recommendations",
-    "text": "Caveats and Recommendations\n\nThe model’s performance may vary for different subgroups. It’s recommended to evaluate the model’s fairness across various demographic groups.\nRegular retraining is advised to ensure the model remains accurate as financial trends evolve.\nThe model should be used in conjunction with other risk assessment methods and human judgment.",
-    "crumbs": [
-      "Read The Docs",
-      "Cards",
-      "Model Card: Credit Risk Assessment Model"
+      "Data Processing",
+      "pipelines.data_processing.nodes"
     ]
   }
 ]

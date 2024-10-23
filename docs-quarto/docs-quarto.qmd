@@ -12,10 +12,6 @@ The API reference for this project has been automatically generated. You can fin
 - [Data Science Nodes](reference/pipelines.data_science.nodes.qmd)
 - [Data Processing Pipeline](reference/pipelines.data_processing.pipeline.qmd)
 - [Data Science Pipeline](reference/pipelines.data_science.pipeline.qmd)
+- [Dataset Card](data_card.ipynb)
+- [Model Card](model_card.ipynb)
 
-For a complete list of all documented items, see the [Index](reference/index.qmd).
-
-## Data and Model Cards
-
-- [Data Card](data_card.qmd)
-- [Model Card](model_card.qmd)

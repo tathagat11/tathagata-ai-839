@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Card: dataset_id_96</title>
+<title>Data Card</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -66,8 +100,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed fullcontent">
@@ -83,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./api-docs.html" aria-current="page"> 
+    <a class="nav-link" href="./docs-quarto.html"> 
 <span class="menu-text">Read The Docs</span></a>
   </li>  
 </ul>
@@ -97,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_card.html">Cards</a></li><li class="breadcrumb-item"><a href="./data_card.html">Data Card: dataset_id_96</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_card.html">Cards</a></li><li class="breadcrumb-item"><a href="./data_card.html">Data Card</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -195,13 +233,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_card.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Card: dataset_id_96</span></a>
+ <span class="menu-text">Data Card</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./model_card.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Card: Credit Risk Assessment Model</span></a>
+ <span class="menu-text">Model Card</span></a>
   </div>
 </li>
       </ul>
@@ -215,9 +253,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_card.html">Cards</a></li><li class="breadcrumb-item"><a href="./data_card.html">Data Card: dataset_id_96</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_card.html">Cards</a></li><li class="breadcrumb-item"><a href="./data_card.html">Data Card</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Data Card: dataset_id_96</h1>
+<h1 class="title">Data Card</h1>
 </div>
 
 
@@ -234,83 +272,173 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="data-card-dataset_id_96" class="level1">
-<h1>Data Card: dataset_id_96</h1>
-<section id="dataset-information" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-information">Dataset Information</h2>
-<ul>
-<li><strong>Name</strong>: dataset_id_96</li>
-<li><strong>Description</strong>: Credit risk assessment dataset</li>
-<li><strong>Version</strong>: 1.0</li>
-</ul>
+<section id="dataset-description" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-description">Dataset Description</h3>
+<div id="cell-1" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich <span class="im">import</span> <span class="bu">print</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"dataset_id_96"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>description <span class="op">=</span> <span class="st">"Credit risk assessment dataset"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>creation_date <span class="op">=</span> <span class="st">"Unknown"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="st">"1.0"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"""• [bold]Name[/bold]: </span><span class="sc">{</span>name<span class="sc">}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">• [bold]Description[/bold]: </span><span class="sc">{</span>description<span class="sc">}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">• [bold]Version[/bold]: </span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">"""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">• <span style="font-weight: bold">Name</span>: dataset_id_96
+• <span style="font-weight: bold">Description</span>: Credit risk assessment dataset
+• <span style="font-weight: bold">Version</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>
+</pre>
+</div>
+</div>
 </section>
-<section id="dataset-characteristics" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-characteristics">Dataset Characteristics</h2>
-<ul>
-<li><strong>Number of Instances</strong>: 90</li>
-<li><strong>Number of Features</strong>: 32</li>
-<li><strong>Target Variable</strong>: y (boolean)</li>
-</ul>
+<section id="dataset-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-characteristics">Dataset Characteristics</h3>
+<div id="cell-3" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>project_dir <span class="op">=</span> Path().absolute().parent</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data_card_path <span class="op">=</span> project_dir <span class="op">/</span> <span class="st">"data"</span> <span class="op">/</span> <span class="st">"08_reporting"</span> <span class="op">/</span> <span class="st">"data-card"</span> <span class="op">/</span> <span class="st">"data_card.json"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(data_card_path) <span class="im">as</span> f:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    data_card <span class="op">=</span> json.load(f)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    data_card <span class="op">=</span> json.loads(data_card)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"""• [bold]Number of Instances[/bold]: </span><span class="sc">{</span>data_card[<span class="st">'number_of_rows'</span>]<span class="sc">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">• [bold]Number of Features[/bold]: </span><span class="sc">{</span>data_card[<span class="st">'number_of_features'</span>]<span class="sc">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">• [bold]Target Variable[/bold]: y (boolean)"""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">• <span style="font-weight: bold">Number of Instances</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">90</span>
+• <span style="font-weight: bold">Number of Features</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+• <span style="font-weight: bold">Target Variable</span>: y <span style="font-weight: bold">(</span>boolean<span style="font-weight: bold">)</span>
+</pre>
+</div>
+</div>
 </section>
-<section id="data-quality-metrics" class="level2">
-<h2 class="anchored" data-anchor-id="data-quality-metrics">Data Quality Metrics</h2>
-<ul>
-<li><strong>Number of Features</strong>: 32</li>
-<li><strong>Number of Rows</strong>: 90</li>
-<li><strong>Missing Values</strong>: 0.0%</li>
-</ul>
+<section id="features" class="level3">
+<h3 class="anchored" data-anchor-id="features">Features</h3>
+<div id="cell-5" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>features_list <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">. </span><span class="sc">{</span>data_card[<span class="st">'feature_names'</span>][i]<span class="sc">}</span><span class="ss">"</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data_card[<span class="st">"feature_names"</span>]))]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(features_list))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. checking_status
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>. duration
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>. credit_history
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>. purpose
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>. credit_amount
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>. savings_status
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>. employment
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>. installment_commitment
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span>. personal_status
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>. other_parties
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">11</span>. residence_since
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">12</span>. property_magnitude
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>. age
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span>. other_payment_plans
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>. housing
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span>. existing_credits
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">17</span>. job
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>. num_dependents
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">19</span>. own_telephone
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>. foreign_worker
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">21</span>. health_status
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22</span>. X_1
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">23</span>. X_2
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">24</span>. X_3
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25</span>. X_4
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span>. X_5
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">27</span>. X_6
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span>. X_7
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">29</span>. X_8
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">30</span>. X_9
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">31</span>. X_10
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>. y
+</pre>
+</div>
+</div>
 </section>
-<section id="features" class="level2">
-<h2 class="anchored" data-anchor-id="features">Features</h2>
-<p>checking_status, duration, credit_history, purpose, credit_amount, savings_status, employment, installment_commitment, personal_status, other_parties, residence_since, property_magnitude, age, other_payment_plans, housing, existing_credits, job, num_dependents, own_telephone, foreign_worker, health_status, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, y</p>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data Collection</h3>
+<div id="cell-7" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>method <span class="op">=</span> <span class="st">"Unknown"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"• [bold]Method[/bold]: </span><span class="sc">{</span>method<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">• <span style="font-weight: bold">Method</span>: Unknown
+</pre>
+</div>
+</div>
 </section>
-<section id="feature-descriptions" class="level2">
-<h2 class="anchored" data-anchor-id="feature-descriptions">Feature Descriptions</h2>
-<ul>
-<li><strong>checking_status</strong>: Status of existing checking account</li>
-<li><strong>credit_history</strong>: Credit history of the applicant</li>
-<li><strong>purpose</strong>: Purpose of the credit</li>
-<li><strong>savings_status</strong>: Status of savings accounts/bonds</li>
-<li><strong>employment</strong>: Present employment since</li>
-<li><strong>personal_status</strong>: Sex &amp; marital status</li>
-<li><strong>other_parties</strong>: Other debtors / guarantors</li>
-<li><strong>property_magnitude</strong>: Property (e.g.&nbsp;real estate)</li>
-<li><strong>other_payment_plans</strong>: Other installment plans</li>
-<li><strong>housing</strong>: Housing (own, rent, or free)</li>
-<li><strong>job</strong>: Job type</li>
-<li><strong>foreign_worker</strong>: Is the applicant a foreign worker?</li>
-<li><strong>health_status</strong>: Health status of the applicant</li>
-<li><strong>y</strong>: Boolean indicating credit risk (True = good, False = bad)</li>
-</ul>
+<section id="intended-use" class="level3">
+<h3 class="anchored" data-anchor-id="intended-use">Intended Use</h3>
+<div id="cell-9" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"""This dataset can be used to train machine learning models to predict the likelihood of</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">credit default.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">      """</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">This dataset can be used to train machine learning models to predict the likelihood of
+credit default.
+      
+</pre>
+</div>
+</div>
 </section>
-<section id="data-collection" class="level2">
-<h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
-<ul>
-<li><strong>Method</strong>: Unknown</li>
-</ul>
+<section id="ethical-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h3>
+<div id="cell-11" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"""• Ensure fair and unbiased use of the data, particularly regarding protected attributes </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">  like personal status.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">• Be cautious of potential biases in the original data collection process.</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">• Consider the implications of using this data for decision-making in financial contexts."""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">• Ensure fair and unbiased use of the data, particularly regarding protected attributes 
+  like personal status.
+• Be cautious of potential biases in the original data collection process.
+• Consider the implications of using this data for decision-making in financial contexts.
+</pre>
+</div>
+</div>
 </section>
-<section id="intended-use" class="level2">
-<h2 class="anchored" data-anchor-id="intended-use">Intended Use</h2>
-<p>This dataset is intended for credit risk assessment. It can be used to train machine learning models to predict the likelihood of credit default.</p>
-</section>
-<section id="ethical-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
-<ul>
-<li>Ensure fair and unbiased use of the data, particularly regarding protected attributes like personal status.</li>
-<li>Be cautious of potential biases in the original data collection process.</li>
-<li>Consider the implications of using this data for decision-making in financial contexts.</li>
-</ul>
-</section>
-<section id="known-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="known-limitations">Known Limitations</h2>
-<ul>
-<li>The dataset is relatively small (90 instances), which may limit its representativeness.</li>
-<li>Some categorical variables may have imbalanced categories.</li>
-<li>The additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.</li>
-</ul>
+<section id="known-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="known-limitations">Known Limitations</h3>
+<div id="cell-13" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"""• The dataset is relatively small (</span><span class="sc">{</span>data_card[<span class="st">'number_of_rows'</span>]<span class="sc">}</span><span class="ss"> instances), which may limit its representativeness.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ss">• Some categorical variables may have imbalanced categories.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ss">• The additional numerical features (X_1 to X_10) lack clear descriptions of what they</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ss">  represent.</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ss">      """</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">• The dataset is relatively small <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">90</span> instances<span style="font-weight: bold">)</span>, which may limit its representativeness.
+• Some categorical variables may have imbalanced categories.
+• The additional numerical features <span style="font-weight: bold">(</span>X_1 to X_10<span style="font-weight: bold">)</span> lack clear descriptions of what they
+  represent.
+      
+</pre>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

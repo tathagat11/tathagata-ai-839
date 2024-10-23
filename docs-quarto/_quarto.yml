@@ -1,6 +1,12 @@
 project:
   type: website
 
+execute:
+  echo: true
+  eval: true
+  enabled: true
+  cache: false
+
 metadata-files:
   - _sidebar.yml
 
@@ -12,24 +18,4 @@ website:
   navbar:
     left:
       - text: "Read The Docs"
-        href: api-docs.html
-
-sections:
-  - title: Data Processing
-    desc: Data processing nodes
-    contents:
-      - pipelines.data_processing.nodes
-  - title: Data Science
-    desc: Data science nodes
-    contents:
-      - pipelines.data_science.nodes
-  - title: Pipelines
-    desc: Pipeline definitions
-    contents:
-      - pipelines.data_processing.pipeline
-      - pipelines.data_science.pipeline
-  - title: Cards
-    desc: Data and Model Cards
-    contents:
-      - data_card
-      - model_card
+        href: docs-quarto.html

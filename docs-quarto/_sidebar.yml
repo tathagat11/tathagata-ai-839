@@ -15,7 +15,7 @@ website:
       - api-docs.qmd
       section: API Documentation
     - contents:
-      - data_card.qmd
-      - model_card.qmd
+      - data_card.ipynb
+      - model_card.ipynb
       section: Cards
   - id: dummy-sidebar
