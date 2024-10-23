@@ -1,5 +1,12 @@
 from kedro.pipeline import Pipeline, node
-from .nodes import split_data, train_model, evaluate_model, detect_target_drift, create_model_card
+
+from .nodes import (
+    create_model_card,
+    detect_target_drift,
+    evaluate_model,
+    split_data,
+    train_model,
+)
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -48,6 +55,6 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=["model", "metrics"],
                 outputs="model_card",
                 name="create_model_card",
-            )
+            ),
         ]
     )

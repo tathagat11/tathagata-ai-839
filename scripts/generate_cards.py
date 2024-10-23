@@ -1,7 +1,8 @@
 import json
 
+
 def generate_data_card():
-    with open('data/08_reporting/data-card/data_card.json', 'r') as f:
+    with open("data/08_reporting/data-card/data_card.json") as f:
         data_card = json.load(f)
         data_card = json.loads(data_card)
 
@@ -58,12 +59,13 @@ This dataset is intended for credit risk assessment. It can be used to train mac
 - Some categorical variables may have imbalanced categories.
 - The additional numerical features (X_1 to X_10) lack clear descriptions of what they represent.
     """
-    
-    with open('docs-quarto/data_card_content.md', 'w') as f:
+
+    with open("docs-quarto/data_card_content.md", "w") as f:
         f.write(content)
 
+
 def generate_model_card():
-    with open('data/08_reporting/model-card/model_card.json', 'r') as f:
+    with open("data/08_reporting/model-card/model_card.json") as f:
         model_card = json.load(f)
         model_card = json.loads(model_card)
 
@@ -104,7 +106,7 @@ def generate_model_card():
 - Regular retraining is advised to ensure the model remains accurate as financial trends evolve.
 - The model should be used in conjunction with other risk assessment methods and human judgment.
     """
-    with open('docs-quarto/model_card_content.md', 'w') as f:
+    with open("docs-quarto/model_card_content.md", "w") as f:
         f.write(content)
 
 

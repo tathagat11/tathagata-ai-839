@@ -3,7 +3,10 @@ from the Kedro defaults. For further information, including these default values
 https://docs.kedro.org/en/stable/kedro_project_setup/settings.html."""
 
 # Instantiated project hooks.
-from tathagata_ai_839.hooks import MLflowModelDeploymentHook, GenerateCardsHook  # noqa: E402
+from tathagata_ai_839.hooks import (  # noqa: E402
+    GenerateCardsHook,
+    MLflowModelDeploymentHook,
+)
 
 # Hooks are executed in a Last-In-First-Out (LIFO) order.
 HOOKS = (MLflowModelDeploymentHook(), GenerateCardsHook())

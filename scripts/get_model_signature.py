@@ -1,8 +1,6 @@
 import mlflow
-import pandas as pd
-import json
 
-model_uri = "runs:/6e7595e82a184f03946a91bd65373b13/model"  
+model_uri = "runs:/6e7595e82a184f03946a91bd65373b13/model"
 
 loaded_model = mlflow.pyfunc.load_model(model_uri)
 

@@ -1,10 +1,8 @@
-from kedro.framework.hooks import hook_impl
-from pyspark import SparkConf
-from pyspark.sql import SparkSession
-import subprocess
-import mlflow
 import os
+import subprocess
 
+import mlflow
+from kedro.framework.hooks import hook_impl
 
 # class SparkHooks:
 #     @hook_impl
@@ -26,6 +24,7 @@ import os
 #         _spark_session = spark_session_conf.getOrCreate()
 #         _spark_session.sparkContext.setLogLevel("WARN")
 
+
 class MLflowModelDeploymentHook:
     @hook_impl
     def after_pipeline_run(self):
@@ -34,21 +33,29 @@ class MLflowModelDeploymentHook:
         artifact_uri = latest_version.source
         local_path = artifact_uri.replace("file://", "")
         absolute_model_path = os.path.abspath(local_path)
-        
+
         subprocess.run(["docker", "stop", "mlflow-model-server"], check=False)
         subprocess.run(["docker", "rm", "mlflow-model-server"], check=False)
-        
-        subprocess.run([
-            "docker", "run", 
-            "-d",
-            "--name", "mlflow-model-server",
-            "-p", "5002:5002", 
-            "-v", f"{absolute_model_path}:/models",
-            "mlflow-server"
-        ], check=True)
-        
+
+        subprocess.run(
+            [
+                "docker",
+                "run",
+                "-d",
+                "--name",
+                "mlflow-model-server",
+                "-p",
+                "5002:5002",
+                "-v",
+                f"{absolute_model_path}:/models",
+                "mlflow-server",
+            ],
+            check=True,
+        )
+
         print(f"Deployed latest model version: {latest_version.version}")
         # pass
+
 
 class GenerateCardsHook:
     @hook_impl
@@ -56,7 +63,7 @@ class GenerateCardsHook:
         try:
             base_dir = os.getcwd()
             subprocess.run(["python", "scripts/generate_cards.py"], check=True)
-            os.chdir(os.path.join(base_dir,"docs-quarto"))
+            os.chdir(os.path.join(base_dir, "docs-quarto"))
             subprocess.run(["quarto", "render"], check=True)
             os.chdir(base_dir)
             print("Cards updated in quarto documentation.")

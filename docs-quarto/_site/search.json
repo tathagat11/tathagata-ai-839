@@ -322,7 +322,7 @@
     "href": "model_card_content.html#model-architecture",
     "title": "",
     "section": "Model Architecture",
-    "text": "Model Architecture\n\nBase Estimators: 1.0 decision trees\nMax Depth: 5\nCriterion: gini"
+    "text": "Model Architecture\n\nBase Estimators: 10 decision trees\nMax Depth: 5\nCriterion: gini"
   },
   {
     "objectID": "model_card_content.html#model-parameters",
@@ -336,7 +336,7 @@
     "href": "model_card_content.html#performance-metrics",
     "title": "",
     "section": "Performance Metrics",
-    "text": "Performance Metrics\n\nAccuracy: 0.78\nPrecision: 0.64\nRecall: 1.00\nF1 Score: 0.78"
+    "text": "Performance Metrics\n\nAccuracy: 0.89\nPrecision: 0.78\nRecall: 1.00\nF1 Score: 0.88"
   },
   {
     "objectID": "model_card_content.html#training-data",
@@ -400,7 +400,7 @@
     "href": "model_card.html#model-architecture",
     "title": "Model Card: Credit Risk Assessment Model",
     "section": "Model Architecture",
-    "text": "Model Architecture\n\nBase Estimators: 1.0 decision trees\nMax Depth: 5\nCriterion: gini",
+    "text": "Model Architecture\n\nBase Estimators: 10 decision trees\nMax Depth: 5\nCriterion: gini",
     "crumbs": [
       "Read The Docs",
       "Cards",
@@ -424,7 +424,7 @@
     "href": "model_card.html#performance-metrics",
     "title": "Model Card: Credit Risk Assessment Model",
     "section": "Performance Metrics",
-    "text": "Performance Metrics\n\nAccuracy: 0.78\nPrecision: 0.64\nRecall: 1.00\nF1 Score: 0.78",
+    "text": "Performance Metrics\n\nAccuracy: 0.89\nPrecision: 0.78\nRecall: 1.00\nF1 Score: 0.88",
     "crumbs": [
       "Read The Docs",
       "Cards",

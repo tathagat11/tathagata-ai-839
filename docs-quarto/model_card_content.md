@@ -8,7 +8,7 @@
 - **Intended Users**: Financial institutions, credit analysts
 
 ## Model Architecture
-- **Base Estimators**: 1.0 decision trees
+- **Base Estimators**: 10 decision trees
 - **Max Depth**: 5
 - **Criterion**: gini
 
@@ -36,10 +36,10 @@
 }
 
 ## Performance Metrics
-- **Accuracy**: 0.78
-- **Precision**: 0.64
+- **Accuracy**: 0.89
+- **Precision**: 0.78
 - **Recall**: 1.00
-- **F1 Score**: 0.78
+- **F1 Score**: 0.88
 
 ## Training Data
 - **Dataset**: dataset_id_96

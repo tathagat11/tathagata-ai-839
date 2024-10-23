@@ -1,13 +1,15 @@
-import pandas as pd
-import numpy as np
-from typing import List, Dict, Tuple
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.compose import ColumnTransformer
-from .data_quality import generate_data_quality_report, get_data_quality_metrics
-import logging
 import json
+import logging
+from typing import Dict, List
+
+import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+from .data_quality import generate_data_quality_report, get_data_quality_metrics
 
 logger = logging.getLogger(__name__)
+
 
 def load_and_erase_data(data: pd.DataFrame, erasure_list: pd.DataFrame) -> pd.DataFrame:
     """
@@ -19,7 +21,7 @@ def load_and_erase_data(data: pd.DataFrame, erasure_list: pd.DataFrame) -> pd.Da
     Returns:
         Loaded DataFrame
     """
-    indices_to_erase = erasure_list['index'].tolist()
+    indices_to_erase = erasure_list["index"].tolist()
     return data.drop(indices_to_erase)
 
 
@@ -39,7 +41,7 @@ def run_data_quality_checks(df: pd.DataFrame) -> Dict:
     except Exception as e:
         logger.error(f"Error in generating data quality report: {str(e)}")
         metrics = {"error": str(e)}
-    
+
     return metrics
 
 
@@ -138,17 +140,16 @@ def split_data(df: pd.DataFrame, target_column: str = "y") -> Dict[str, pd.DataF
     y = df[[target_column]]  # Keep as DataFrame instead of Series
     return {"features": X, "target": y}
 
+
 def create_data_card(loaded_data: pd.DataFrame, data_quality_metrics: Dict) -> None:
     """
     Creates a data card based on the loaded data and data quality metrics.
     """
     data_card = {
         "dataset_name": "dataset_id_96",
-
         "number_of_rows": len(loaded_data),
         "number_of_features": len(loaded_data.columns),
         "feature_names": list(loaded_data.columns),
-        "data_quality_metrics": data_quality_metrics
+        "data_quality_metrics": data_quality_metrics,
     }
     return json.dumps(data_card)
-

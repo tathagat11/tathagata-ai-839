@@ -1,5 +1,13 @@
-from kedro.pipeline import Pipeline, pipeline, node
-from .nodes import load_and_erase_data, preprocess_data, split_data, run_data_quality_checks, create_data_card
+from kedro.pipeline import Pipeline, node, pipeline
+
+from .nodes import (
+    create_data_card,
+    load_and_erase_data,
+    preprocess_data,
+    run_data_quality_checks,
+    split_data,
+)
+
 
 def create_pipeline(**kwargs) -> Pipeline:
     """
@@ -42,6 +50,6 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=["loaded_data", "data_quality_metrics"],
                 outputs="data_card",
                 name="create_data_card",
-            )
+            ),
         ]
     )

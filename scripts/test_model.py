@@ -1,18 +1,22 @@
-import requests
-import pandas as pd
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.compose import ColumnTransformer
-from sklearn.model_selection import train_test_split
 from typing import Dict
 
+import pandas as pd
+import requests
+from sklearn.compose import ColumnTransformer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
 # Load the dataset
-df = pd.read_csv('data/01_raw/dataset_id_96.csv')
+df = pd.read_csv("data/01_raw/dataset_id_96.csv")
+
 
 def identify_categorical_columns(df):
     return df.select_dtypes(include=["object", "category"]).columns.tolist()
 
+
 def identify_numerical_columns(df):
     return df.select_dtypes(include=["int64", "float64"]).columns.tolist()
+
 
 def preprocess_data(df):
     # Identify categorical and numerical columns
@@ -25,7 +29,9 @@ def preprocess_data(df):
         numerical_columns.remove(target_column)
 
     # Create preprocessing steps
-    categorical_transformer = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
+    categorical_transformer = OneHotEncoder(
+        sparse_output=False, handle_unknown="ignore"
+    )
     numerical_transformer = StandardScaler()
 
     # Combine preprocessing steps
@@ -41,13 +47,16 @@ def preprocess_data(df):
     X_processed = preprocessor.fit_transform(X)
 
     # Get feature names
-    onehot_cols = preprocessor.named_transformers_["cat"].get_feature_names_out(categorical_columns)
+    onehot_cols = preprocessor.named_transformers_["cat"].get_feature_names_out(
+        categorical_columns
+    )
     feature_names = numerical_columns + list(onehot_cols)
 
     # Create a new DataFrame with processed features
     processed_df = pd.DataFrame(X_processed, columns=feature_names, index=df.index)
 
     return processed_df
+
 
 def split_data(
     features: pd.DataFrame, target: pd.Series, parameters: Dict
@@ -61,16 +70,17 @@ def split_data(
     )
     return {"X_train": X_train, "X_test": X_test, "y_train": y_train, "y_test": y_test}
 
+
 # Preprocess the full dataset
 X = preprocess_data(df)
-y = df['y']
+y = df["y"]
 
 # Split the data
 parameters = {"test_size": 0.2, "random_state": 20}
 data_split = split_data(X, y, parameters)
 
 # Select a random sample of 5 rows from the test set
-sample_data = data_split['X_test'].sample(n=5, random_state=42)
+sample_data = data_split["X_test"].sample(n=5, random_state=42)
 
 # Print the sample data
 print("Sample Data (Preprocessed):")
@@ -80,7 +90,7 @@ print(sample_data)
 input_data = {
     "dataframe_split": {
         "columns": sample_data.columns.tolist(),
-        "data": sample_data.values.tolist()
+        "data": sample_data.values.tolist(),
     }
 }
 
@@ -88,22 +98,22 @@ input_data = {
 predictions = None
 try:
     response = requests.post(
-        'http://127.0.0.1:5001/invocations',
+        "http://127.0.0.1:5001/invocations",
         json=input_data,
-        headers={"Content-Type": "application/json"}
+        headers={"Content-Type": "application/json"},
     )
-   
+
     print(f"\nResponse status code: {response.status_code}")
-   
+
     if response.status_code == 200:
         predictions = response.json()
-        
-        if isinstance(predictions, dict) and 'predictions' in predictions:
-            predictions = predictions['predictions']
-        
+
+        if isinstance(predictions, dict) and "predictions" in predictions:
+            predictions = predictions["predictions"]
+
         if not isinstance(predictions, list):
             print("Unexpected prediction format:", predictions)
-            
+
     else:
         print(f"Error: Received status code {response.status_code}")
         print("Response content:")
@@ -118,4 +128,6 @@ if predictions and isinstance(predictions, list):
     for i, (pred, actual) in enumerate(zip(predictions, actual_labels)):
         print(f"Sample {i+1}: Predicted: {pred}, Actual: {actual}")
 else:
-    print("Unable to compare predictions with actual labels due to unexpected prediction format.")
+    print(
+        "Unable to compare predictions with actual labels due to unexpected prediction format."
+    )
