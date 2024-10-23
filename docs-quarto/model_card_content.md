@@ -8,8 +8,8 @@
 - **Intended Users**: Financial institutions, credit analysts
 
 ## Model Architecture
-- **Base Estimators**: 10.0 decision trees
-- **Max Depth**: 10
+- **Base Estimators**: 1.0 decision trees
+- **Max Depth**: 5
 - **Criterion**: gini
 
 ## Model Parameters
@@ -18,7 +18,7 @@
   "ccp_alpha": 0.0,
   "class_weight": null,
   "criterion": "gini",
-  "max_depth": 10,
+  "max_depth": 5,
   "max_features": "sqrt",
   "max_leaf_nodes": null,
   "max_samples": null,
@@ -27,7 +27,7 @@
   "min_samples_split": 2,
   "min_weight_fraction_leaf": 0.0,
   "monotonic_cst": null,
-  "n_estimators": 100,
+  "n_estimators": 10,
   "n_jobs": null,
   "oob_score": false,
   "random_state": null,
@@ -36,10 +36,10 @@
 }
 
 ## Performance Metrics
-- **Accuracy**: 0.83
-- **Precision**: 0.70
+- **Accuracy**: 0.78
+- **Precision**: 0.64
 - **Recall**: 1.00
-- **F1 Score**: 0.82
+- **F1 Score**: 0.78
 
 ## Training Data
 - **Dataset**: dataset_id_96

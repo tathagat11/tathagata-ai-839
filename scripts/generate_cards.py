@@ -77,7 +77,7 @@ def generate_model_card():
 - **Intended Users**: Financial institutions, credit analysts
 
 ## Model Architecture
-- **Base Estimators**: {model_card['model_parameters']['n_estimators']/10} decision trees
+- **Base Estimators**: {model_card['model_parameters']['n_estimators']} decision trees
 - **Max Depth**: {model_card['model_parameters']['max_depth']}
 - **Criterion**: {model_card['model_parameters']['criterion']}
 
