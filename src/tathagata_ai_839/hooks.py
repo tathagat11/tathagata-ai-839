@@ -62,7 +62,6 @@ class GenerateCardsHook:
     def after_pipeline_run(self):
         try:
             base_dir = os.getcwd()
-            subprocess.run(["python", "scripts/generate_cards.py"], check=True)
             os.chdir(os.path.join(base_dir, "docs-quarto"))
             subprocess.run(["quarto", "render"], check=True)
             os.chdir(base_dir)

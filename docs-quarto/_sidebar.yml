@@ -17,5 +17,6 @@ website:
     - contents:
       - data_card.ipynb
       - model_card.ipynb
+      - project_card.ipynb
       section: Cards
   - id: dummy-sidebar
