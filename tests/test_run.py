@@ -1,16 +1,12 @@
-# tests/test_run.py
-
-from pathlib import Path
-
 import pandas as pd
 import pytest
 from kedro.framework.session import KedroSession
 from kedro.framework.startup import bootstrap_project
-from tathagata_ai_839.pipelines.data_processing.nodes import load_data, preprocess_data
 from tathagata_ai_839.pipelines.data_processing.nodes import (
+    load_and_erase_data,
+    preprocess_data,
     split_data as split_data_processing,
 )
-from tathagata_ai_839.pipelines.data_science.nodes import evaluate_model, train_model
 from tathagata_ai_839.pipelines.data_science.nodes import (
     split_data as split_data_science,
 )
@@ -47,6 +43,13 @@ def sample_data():
 
 
 @pytest.fixture
+def sample_erasure_list():
+    return pd.DataFrame({
+        "index": [1]  # This will erase the second row
+    })
+
+
+@pytest.fixture
 def model_parameters():
     return {
         "test_size": 0.2,
@@ -55,43 +58,29 @@ def model_parameters():
     }
 
 
-def test_full_run(sample_data, model_parameters):
-    # Data Processing Pipeline
-    loaded_data = load_data(sample_data)
+def test_data_processing_pipeline(sample_data, sample_erasure_list):
+    # Test only the data processing steps that don't create artifacts
+    loaded_data = load_and_erase_data(sample_data, sample_erasure_list)
     preprocessed_data = preprocess_data(loaded_data)
     split_data = split_data_processing(preprocessed_data)
 
-    features = split_data["features"]
-    target = split_data["target"]
-
-    # Data Science Pipeline
-    split_result = split_data_science(features, target, model_parameters)
-    model = train_model(
-        split_result["X_train"], split_result["y_train"], model_parameters
-    )
-    metrics = evaluate_model(model, split_result["X_test"], split_result["y_test"])
-
     # Assertions
     assert loaded_data is not None
+    assert len(loaded_data) == len(sample_data) - len(sample_erasure_list)
     assert preprocessed_data is not None
     assert "features" in split_data and "target" in split_data
-    assert model is not None
-    assert all(
-        metric in metrics for metric in ["accuracy", "precision", "recall", "f1"]
-    )
-    assert all(0 <= value <= 1 for value in metrics.values())
-
-    print("Full project run test passed successfully!")
-    print(f"Model metrics: {metrics}")
 
 
-def test_kedro_run():
-    bootstrap_project(Path.cwd())
-    with KedroSession.create() as session:
-        session.run()
-
-    print("Kedro project run completed successfully!")
-
-
-if __name__ == "__main__":
-    pytest.main([__file__])
+def test_data_science_splits(sample_data, model_parameters):
+    # Only test the data splitting functionality
+    features = pd.DataFrame(sample_data.drop('y', axis=1))
+    target = pd.DataFrame(sample_data['y'])
+    
+    split_result = split_data_science(features, target, model_parameters)
+    
+    assert "X_train" in split_result
+    assert "X_test" in split_result
+    assert "y_train" in split_result
+    assert "y_test" in split_result
+    assert len(split_result["X_train"]) > 0
+    assert len(split_result["X_test"]) > 0

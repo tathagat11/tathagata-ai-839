@@ -6,10 +6,11 @@ https://docs.kedro.org/en/stable/kedro_project_setup/settings.html."""
 from tathagata_ai_839.hooks import (  # noqa: E402
     GenerateCardsHook,
     MLflowModelDeploymentHook,
+    TestingHook
 )
 
 # Hooks are executed in a Last-In-First-Out (LIFO) order.
-HOOKS = (MLflowModelDeploymentHook(), GenerateCardsHook())
+HOOKS = (MLflowModelDeploymentHook(), GenerateCardsHook(), TestingHook())
 
 # Installed plugins for which to disable hook auto-registration.
 # DISABLE_HOOKS_FOR_PLUGINS = ("kedro-viz",)

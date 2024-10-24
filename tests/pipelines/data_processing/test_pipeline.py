@@ -1,9 +1,11 @@
 import pandas as pd
 import pytest
 from tathagata_ai_839.pipelines.data_processing.nodes import (
-    load_data,
+    load_and_erase_data,
+    run_data_quality_checks,
     preprocess_data,
     split_data,
+    create_data_card
 )
 
 
@@ -37,16 +39,37 @@ def sample_data():
     )
 
 
-def test_data_processing_pipeline(sample_data):
-    # Test load_data
-    loaded_data = load_data(sample_data)
+@pytest.fixture
+def sample_erasure_list():
+    return pd.DataFrame({
+        "index": [1]
+    })
+
+
+def test_data_processing_pipeline(sample_data, sample_erasure_list, mocker):
+    # Mock data quality functions
+    mocker.patch('tathagata_ai_839.pipelines.data_processing.nodes.generate_data_quality_report')
+    mocker.patch(
+        'tathagata_ai_839.pipelines.data_processing.nodes.get_data_quality_metrics',
+        return_value={"completeness": 1.0, "uniqueness": 0.8}
+    )
+
+    # Test load_and_erase_data
+    loaded_data = load_and_erase_data(sample_data, sample_erasure_list)
     assert loaded_data is not None
-    assert len(loaded_data) == len(sample_data)
+    assert len(loaded_data) == len(sample_data) - len(sample_erasure_list)
+    assert 1 not in loaded_data.index
+
+    # Test data quality checks
+    quality_metrics = run_data_quality_checks(loaded_data)
+    assert quality_metrics is not None
+    assert isinstance(quality_metrics, dict)
+    assert "completeness" in quality_metrics
 
     # Test preprocess_data
     preprocessed_data = preprocess_data(loaded_data)
     assert preprocessed_data is not None
-    assert len(preprocessed_data) == len(sample_data)
+    assert len(preprocessed_data) == len(loaded_data)
     assert "checking_status_no checking" in preprocessed_data.columns
     assert "purpose_business" in preprocessed_data.columns
     assert "duration" in preprocessed_data.columns
@@ -59,12 +82,17 @@ def test_data_processing_pipeline(sample_data):
 
     assert features is not None
     assert target is not None
-    assert len(features) == len(sample_data)
-    assert len(target) == len(sample_data)
+    assert len(features) == len(loaded_data)
+    assert len(target) == len(loaded_data)
     assert "y" not in features.columns
     assert "y" in target.columns
 
-    print("All tests passed successfully!")
+    # Test create_data_card
+    data_card = create_data_card(loaded_data, quality_metrics)
+    assert data_card is not None
+    assert isinstance(data_card, str)  # Should be JSON string
+
+    print("All pipeline tests passed successfully!")
 
 
 if __name__ == "__main__":

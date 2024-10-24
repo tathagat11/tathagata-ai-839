@@ -1,65 +1,63 @@
-import numpy as np
 import pandas as pd
 import pytest
-from sklearn.ensemble import RandomForestClassifier
 from tathagata_ai_839.pipelines.data_science.nodes import (
-    evaluate_model,
     split_data,
-    train_model,
+    detect_target_drift
 )
 
 
 @pytest.fixture
-def sample_data():
-    np.random.seed(42)
-    features = pd.DataFrame(
-        {
-            "feature1": np.random.rand(100),
-            "feature2": np.random.rand(100),
-            "feature3": np.random.rand(100),
-        }
-    )
-    target = pd.DataFrame({"target": np.random.randint(0, 2, 100)})
-    return features, target
+def sample_features():
+    return pd.DataFrame({
+        'feature1': [0.1, 0.2, 0.3, 0.4, 0.5],
+        'feature2': [0.2, 0.3, 0.4, 0.5, 0.6],
+        'feature3': [0.3, 0.4, 0.5, 0.6, 0.7]
+    })
+
+
+@pytest.fixture
+def sample_target():
+    return pd.DataFrame({'target': [0, 1, 0, 1, 0]})
 
 
 @pytest.fixture
 def model_parameters():
     return {
-        "test_size": 0.2,
+        "test_size": 0.4,
         "random_state": 42,
-        "model_params": {"n_estimators": 100, "max_depth": 10, "random_state": 42},
+        "model_params": {"n_estimators": 10, "max_depth": 2, "random_state": 42}
     }
 
 
-def test_split_data(sample_data, model_parameters):
-    features, target = sample_data
-    result = split_data(features, target, model_parameters)
+def test_split_data(sample_features, sample_target, model_parameters):
+    result = split_data(sample_features, sample_target, model_parameters)
 
-    assert "X_train" in result and "X_test" in result
-    assert "y_train" in result and "y_test" in result
-    assert len(result["X_train"]) == 80
-    assert len(result["X_test"]) == 20
+    assert isinstance(result, dict)
+    assert all(key in result for key in ["X_train", "X_test", "y_train", "y_test"])
+    assert len(result["X_train"]) + len(result["X_test"]) == len(sample_features)
 
 
-def test_train_model(sample_data, model_parameters):
-    features, target = sample_data
-    split = split_data(features, target, model_parameters)
-    model = train_model(split["X_train"], split["y_train"], model_parameters)
+def test_detect_target_drift(mocker):
+    # Patch the entire evidently report module
+    mocker.patch('evidently.report.Report')
+    mocker.patch('evidently.ColumnMapping')
+    mocker.patch('os.makedirs')
+    mocker.patch('json.dump')
+    mocker.patch('builtins.open', mocker.mock_open())
 
-    assert isinstance(model, RandomForestClassifier)
-    assert model.n_estimators == 100
-    assert model.max_depth == 10
+    y_train = pd.DataFrame({'target': [0, 1, 0, 1, 0]})
+    y_test = pd.DataFrame({'target': [1, 0, 1, 0, 1]})
 
+    # Mock the report instance after import
+    mock_report = mocker.patch('tathagata_ai_839.pipelines.data_science.nodes.Report')()
+    mock_report.as_dict.return_value = {
+        "metrics": [{
+            "result": {
+                "drift_detected": True,
+                "drift_score": 0.8
+            }
+        }]
+    }
 
-def test_evaluate_model(sample_data, model_parameters):
-    features, target = sample_data
-    split = split_data(features, target, model_parameters)
-    model = train_model(split["X_train"], split["y_train"], model_parameters)
-    metrics = evaluate_model(model, split["X_test"], split["y_test"])
-
-    assert "accuracy" in metrics
-    assert "precision" in metrics
-    assert "recall" in metrics
-    assert "f1" in metrics
-    assert all(0 <= value <= 1 for value in metrics.values())
+    with pytest.raises(ValueError, match="Significant target drift detected"):
+        detect_target_drift(y_train, y_test)

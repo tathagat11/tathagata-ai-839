@@ -1,12 +1,15 @@
 import pandas as pd
 import pytest
+import json
 
 from src.tathagata_ai_839.pipelines.data_processing.nodes import (
+    load_and_erase_data,
+    run_data_quality_checks,
     identify_categorical_columns,
     identify_numerical_columns,
-    load_data,
     preprocess_data,
     split_data,
+    create_data_card,
 )
 
 
@@ -40,10 +43,40 @@ def sample_data():
     )
 
 
-def test_load_data(sample_data):
-    result = load_data(sample_data)
+@pytest.fixture
+def sample_erasure_list():
+    return pd.DataFrame({
+        "index": [1]  # This will erase the second row
+    })
+
+
+@pytest.fixture
+def sample_data_quality_metrics():
+    return {
+        "completeness": 1.0,
+        "uniqueness": 0.8,
+        "consistency": 0.9
+    }
+
+
+def test_load_and_erase_data(sample_data, sample_erasure_list):
+    result = load_and_erase_data(sample_data, sample_erasure_list)
     assert isinstance(result, pd.DataFrame)
-    assert result.equals(sample_data)
+    assert len(result) == len(sample_data) - len(sample_erasure_list)
+    assert 1 not in result.index  # Check that index 1 was erased
+
+
+def test_run_data_quality_checks(sample_data, mocker):
+    # Mock the imported functions since we don't have access to them in the test
+    mocker.patch('src.tathagata_ai_839.pipelines.data_processing.nodes.generate_data_quality_report')
+    mocker.patch(
+        'src.tathagata_ai_839.pipelines.data_processing.nodes.get_data_quality_metrics',
+        return_value={"completeness": 1.0}
+    )
+    
+    result = run_data_quality_checks(sample_data)
+    assert isinstance(result, dict)
+    assert "completeness" in result
 
 
 def test_identify_categorical_columns(sample_data):
@@ -117,3 +150,17 @@ def test_split_data(sample_data):
     assert "y" not in split["features"].columns
     assert "y" in split["target"].columns
     assert len(split["features"]) == len(split["target"])
+
+
+def test_create_data_card(sample_data, sample_data_quality_metrics):
+    data_card = create_data_card(sample_data, sample_data_quality_metrics)
+    
+    # Parse the JSON string back to a dictionary
+    data_card_dict = json.loads(data_card)
+    
+    # Check the structure and content
+    assert data_card_dict["dataset_name"] == "dataset_id_96"
+    assert data_card_dict["number_of_rows"] == len(sample_data)
+    assert data_card_dict["number_of_features"] == len(sample_data.columns)
+    assert set(data_card_dict["feature_names"]) == set(sample_data.columns)
+    assert data_card_dict["data_quality_metrics"] == sample_data_quality_metrics

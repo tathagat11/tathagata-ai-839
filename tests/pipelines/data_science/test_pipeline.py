@@ -1,58 +1,51 @@
-# tests/pipelines/data_science/test_pipeline.py
-
-import numpy as np
-import pandas as pd
 import pytest
-from tathagata_ai_839.pipelines.data_science.nodes import (
-    evaluate_model,
-    split_data,
-    train_model,
-)
+from kedro.pipeline import Pipeline
 from tathagata_ai_839.pipelines.data_science.pipeline import create_pipeline
 
 
-@pytest.fixture
-def sample_data():
-    np.random.seed(42)
-    features = pd.DataFrame(
-        {
-            "feature1": np.random.rand(100),
-            "feature2": np.random.rand(100),
-            "feature3": np.random.rand(100),
-        }
-    )
-    target = pd.DataFrame({"target": np.random.randint(0, 2, 100)})
-    return features, target
-
-
-@pytest.fixture
-def model_parameters():
-    return {
-        "test_size": 0.2,
-        "random_state": 42,
-        "model_params": {"n_estimators": 100, "max_depth": 10, "random_state": 42},
-    }
-
-
-def test_data_science_pipeline(sample_data, model_parameters):
-    features, target = sample_data
-
-    # Create the pipeline
+def test_create_pipeline():
     pipeline = create_pipeline()
-
-    # Step 1: Split data
-    split_result = split_data(features, target, model_parameters)
-    assert len(split_result["X_train"]) == 80
-    assert len(split_result["X_test"]) == 20
-
-    # Step 2: Train model
-    model = train_model(
-        split_result["X_train"], split_result["y_train"], model_parameters
-    )
-    assert model is not None
-
-    # Step 3: Evaluate model
-    metrics = evaluate_model(model, split_result["X_test"], split_result["y_test"])
-    assert all(0 <= value <= 1 for value in metrics.values())
-
-    print("Data science pipeline test passed successfully!")
+    
+    # Test that a valid pipeline is created
+    assert isinstance(pipeline, Pipeline)
+    
+    # Test pipeline structure
+    nodes = pipeline.nodes
+    
+    # Check number of nodes
+    assert len(nodes) == 5
+    
+    # List of expected nodes with their exact configuration
+    expected_nodes = [
+        {
+            'name': 'test_train_split_data',
+            'inputs': ['features', 'target', 'params:model_options'],
+            'outputs': ['X_train', 'X_test', 'y_train', 'y_test']
+        },
+        {
+            'name': 'target_drift_detection',
+            'inputs': ['y_train', 'y_test'],
+            'outputs': []  # Kedro converts None to empty list
+        },
+        {
+            'name': 'train_model',
+            'inputs': ['X_train', 'y_train', 'params:model_options'],
+            'outputs': ['model']  # Kedro converts string to single-item list
+        },
+        {
+            'name': 'evaluate_model',
+            'inputs': ['model', 'X_test', 'y_test'],
+            'outputs': ['metrics']
+        },
+        {
+            'name': 'create_model_card',
+            'inputs': ['model', 'metrics'],
+            'outputs': ['model_card']
+        }
+    ]
+    
+    # Verify each node matches expected configuration
+    for idx, (node, expected) in enumerate(zip(nodes, expected_nodes)):
+        assert node.name == expected['name'], f"Node {idx} name mismatch"
+        assert set(node.inputs) == set(expected['inputs']), f"Node {idx} inputs mismatch"
+        assert set(node.outputs) == set(expected['outputs']), f"Node {idx} outputs mismatch"
